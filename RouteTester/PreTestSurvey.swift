@@ -34,6 +34,7 @@ public var PreTestSurvey: ORKOrderedTask {
     ]
     let healthyAnswerFormat: ORKTextChoiceAnswerFormat = ORKAnswerFormat.choiceAnswerFormat(with: .singleChoice, textChoices: healthyChoices)
     let healthyQuestionStep = ORKQuestionStep(identifier: "healthyQuestionStep", title: healthyQuestionStepTitle, answer: healthyAnswerFormat)
+    
     steps += [healthyQuestionStep]
     
     // What is your current alertness?;{'Very sleepy','Somewhat sleepy','Neither alert nor sleepy','Somewhat alert','Very alert'}
@@ -59,6 +60,7 @@ public var PreTestSurvey: ORKOrderedTask {
         ORKTextChoice(text: "Very sad", value: 4 as NSCoding & NSCopying & NSObjectProtocol)
     ]
     let moodAnswerFormat: ORKTextChoiceAnswerFormat = ORKAnswerFormat.choiceAnswerFormat(with: .singleChoice, textChoices: moodChoices)
+    
     let moodQuestionStep = ORKQuestionStep(identifier: "moodQuestionStep", title: moodQuestionStepTitle, answer: moodAnswerFormat)
     steps += [moodQuestionStep]
     
@@ -67,6 +69,8 @@ public var PreTestSurvey: ORKOrderedTask {
     summaryStep.title = "Questionnare Complete"
     summaryStep.text = "You are ready to start the test."
     steps += [summaryStep]
+
+    
     
     return ORKOrderedTask(identifier: "PreTestSurvey", steps: steps)
     

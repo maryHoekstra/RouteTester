@@ -25,13 +25,17 @@ class ViewController: UIViewController {
     // Present pre-test survey task
     // When user presses Take Test button, the Task View Controller is called
     @IBAction func TakeTest(_ sender: UIButton) {
-        let taskViewController = ORKTaskViewController(task: PreTestSurvey, taskRun: nil)
-        taskViewController.delegate = self
-        present(taskViewController, animated: true, completion: nil)
+        // present pre-test survery
+        let PreTestTaskViewController = ORKTaskViewController(task: PreTestSurvey, taskRun: nil)
+        PreTestTaskViewController.delegate = self
+        present(PreTestTaskViewController, animated: true, completion: nil)
+        // present memory test
+        
     }
     
 }
 
+// view controller implements task view controller delegate 
 extension ViewController : ORKTaskViewControllerDelegate {
     
     func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
