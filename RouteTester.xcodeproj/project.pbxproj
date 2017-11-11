@@ -16,6 +16,7 @@
 		4D21522C1FB3BCD500BAE10F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D21522A1FB3BCD500BAE10F /* LaunchScreen.storyboard */; };
 		4D808D771FB3BEDC00118B0F /* PreTestSurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D808D761FB3BEDC00118B0F /* PreTestSurvey.swift */; };
 		4D808D791FB3E7FB00118B0F /* MemoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D808D781FB3E7FB00118B0F /* MemoryTest.swift */; };
+		4D808D7C1FB5481300118B0F /* NewCommuteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D808D7B1FB5481300118B0F /* NewCommuteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		4D21522D1FB3BCD500BAE10F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D808D761FB3BEDC00118B0F /* PreTestSurvey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreTestSurvey.swift; sourceTree = "<group>"; };
 		4D808D781FB3E7FB00118B0F /* MemoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTest.swift; sourceTree = "<group>"; };
+		4D808D7B1FB5481300118B0F /* NewCommuteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommuteViewController.swift; sourceTree = "<group>"; };
 		6851A16856AE004D5AB12A0B /* Pods_RouteTester.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RouteTester.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 			children = (
 				4D21521E1FB3BCD500BAE10F /* AppDelegate.swift */,
 				4D2152201FB3BCD500BAE10F /* ViewController.swift */,
+				4D808D7B1FB5481300118B0F /* NewCommuteViewController.swift */,
 				4D808D761FB3BEDC00118B0F /* PreTestSurvey.swift */,
 				4D808D781FB3E7FB00118B0F /* MemoryTest.swift */,
 				4D2152221FB3BCD500BAE10F /* Main.storyboard */,
@@ -230,6 +233,7 @@
 				4D808D791FB3E7FB00118B0F /* MemoryTest.swift in Sources */,
 				4D2152271FB3BCD500BAE10F /* RouteTester.xcdatamodeld in Sources */,
 				4D21521F1FB3BCD500BAE10F /* AppDelegate.swift in Sources */,
+				4D808D7C1FB5481300118B0F /* NewCommuteViewController.swift in Sources */,
 				4D808D771FB3BEDC00118B0F /* PreTestSurvey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
