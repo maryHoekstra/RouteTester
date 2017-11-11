@@ -17,6 +17,7 @@
 		4D808D771FB3BEDC00118B0F /* PreTestSurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D808D761FB3BEDC00118B0F /* PreTestSurvey.swift */; };
 		4D808D791FB3E7FB00118B0F /* MemoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D808D781FB3E7FB00118B0F /* MemoryTest.swift */; };
 		4D808D7C1FB5481300118B0F /* NewCommuteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D808D7B1FB5481300118B0F /* NewCommuteViewController.swift */; };
+		4D808D7E1FB7AB4B00118B0F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D808D7D1FB7AB4B00118B0F /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		4D808D761FB3BEDC00118B0F /* PreTestSurvey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreTestSurvey.swift; sourceTree = "<group>"; };
 		4D808D781FB3E7FB00118B0F /* MemoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTest.swift; sourceTree = "<group>"; };
 		4D808D7B1FB5481300118B0F /* NewCommuteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommuteViewController.swift; sourceTree = "<group>"; };
+		4D808D7D1FB7AB4B00118B0F /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		6851A16856AE004D5AB12A0B /* Pods_RouteTester.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RouteTester.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -69,18 +71,35 @@
 		4D21521D1FB3BCD500BAE10F /* RouteTester */ = {
 			isa = PBXGroup;
 			children = (
+				4D808D801FB7ABBA00118B0F /* CoreData */,
+				4D808D7F1FB7AB9900118B0F /* ViewControllers */,
 				4D21521E1FB3BCD500BAE10F /* AppDelegate.swift */,
-				4D2152201FB3BCD500BAE10F /* ViewController.swift */,
-				4D808D7B1FB5481300118B0F /* NewCommuteViewController.swift */,
 				4D808D761FB3BEDC00118B0F /* PreTestSurvey.swift */,
 				4D808D781FB3E7FB00118B0F /* MemoryTest.swift */,
 				4D2152221FB3BCD500BAE10F /* Main.storyboard */,
 				4D2152281FB3BCD500BAE10F /* Assets.xcassets */,
 				4D21522A1FB3BCD500BAE10F /* LaunchScreen.storyboard */,
 				4D21522D1FB3BCD500BAE10F /* Info.plist */,
-				4D2152251FB3BCD500BAE10F /* RouteTester.xcdatamodeld */,
 			);
 			path = RouteTester;
+			sourceTree = "<group>";
+		};
+		4D808D7F1FB7AB9900118B0F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4D2152201FB3BCD500BAE10F /* ViewController.swift */,
+				4D808D7B1FB5481300118B0F /* NewCommuteViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4D808D801FB7ABBA00118B0F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4D2152251FB3BCD500BAE10F /* RouteTester.xcdatamodeld */,
+				4D808D7D1FB7AB4B00118B0F /* CoreDataStack.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		8DADA92570F9FBE467BF68B7 /* Pods */ = {
@@ -229,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D808D7E1FB7AB4B00118B0F /* CoreDataStack.swift in Sources */,
 				4D2152211FB3BCD500BAE10F /* ViewController.swift in Sources */,
 				4D808D791FB3E7FB00118B0F /* MemoryTest.swift in Sources */,
 				4D2152271FB3BCD500BAE10F /* RouteTester.xcdatamodeld in Sources */,
