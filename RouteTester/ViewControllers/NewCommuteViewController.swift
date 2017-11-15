@@ -23,26 +23,44 @@ class NewCommuteViewController: UIViewController {
 
     private var commute: Commute?
     
-    //private let locationManager = LocationManager.shared
+    // object to start and stop location services
+    private let locationManager = LocationManager.shared
+    // tracks duration of commute
     private var seconds = 0
+    // timer will fire each second, updating the UI
     private var timer: Timer?
+    // distance will hold the cumulative distance of the commute
     private var distance = Measurement(value: 0, unit: UnitLength.meters)
+    // locationList will hold all location objects collected during commute
     private var locationList: [CLLocation] = []
+    
+    // hide commute details before start is pressed
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dataStackView.isHidden = true
+    }
+    
+    // location updates will stop when user navigates away from page
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer?.invalidate()
+        locationManager.stopUpdatingLocation()
+    }
     
     private func startCommute() {
         //launchPromptStackView.isHidden = true
         dataStackView.isHidden = false
         startButton.isHidden = true
         stopButton.isHidden = false
-        
+        // reset all values, start timer, and begin collecting location updates 
         seconds = 0
         distance = Measurement(value: 0, unit: UnitLength.meters)
         locationList.removeAll()
-        //updateDisplay()
+        updateDisplay()
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
             self.eachSecond()
         }
-        //startLocationUpdates()
+        startLocationUpdates()
     }
     
     private func stopCommute() {
@@ -56,20 +74,16 @@ class NewCommuteViewController: UIViewController {
     
     func eachSecond() {
         seconds += 1
-        //updateDisplay()
+        updateDisplay()
     }
     
-//    private func updateDisplay() {
-//        let formattedDistance = FormatDisplay.distance(distance)
-//        let formattedTime = FormatDisplay.time(seconds)
-//        let formattedPace = FormatDisplay.pace(distance: distance,
-//                                               seconds: seconds,
-//                                               outputUnit: UnitSpeed.minutesPerMile)
-//
-//        distanceLabel.text = "Distance:  \(formattedDistance)"
-//        timeLabel.text = "Time:  \(formattedTime)"
-//        paceLabel.text = "Pace:  \(formattedPace)"
-//    }
+    // update UI
+    private func updateDisplay() {
+        let formattedDistance = FormatDisplay.distance(distance)
+        let formattedTime = FormatDisplay.time(seconds)
+        distanceLabel.text = "Distance:  \(formattedDistance)"
+        timeLabel.text = "Time:  \(formattedTime)"
+    }
     
 
     @IBAction func start(_ sender: Any) {
@@ -94,27 +108,14 @@ class NewCommuteViewController: UIViewController {
         present(alertController, animated: true)
     }
     
-}
-
-extension NewCommuteViewController: SegueHandlerType {
-    enum SegueIdentifier: String {
-        case details = "CommuteDetailsViewController"
+    private func startLocationUpdates() {
+        // set NewCommuteViewController as delegate
+        locationManager.delegate = self
+        //locationManager.activityType = .fitness
+        // minimum distance device must move before location is updated
+        locationManager.distanceFilter = 10
+        locationManager.startUpdatingLocation()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segueIdentifier(for: segue) {
-        case .details:
-            let destination = segue.destination as! CommuteDetailsViewController
-            destination.commute = commute
-        }
-    }
-    
-//    private func startLocationUpdates() {
-//        locationManager.delegate = self
-//        locationManager.activityType = .fitness
-//        locationManager.distanceFilter = 10
-//        locationManager.startUpdatingLocation()
-//    }
     
     private func saveCommute() {
         let newCommute = Commute(context: CoreDataStack.context)
@@ -134,8 +135,25 @@ extension NewCommuteViewController: SegueHandlerType {
         
         commute = newCommute
     }
+    
 }
 
+extension NewCommuteViewController: SegueHandlerType {
+    enum SegueIdentifier: String {
+        case details = "CommuteDetailsViewController"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segueIdentifier(for: segue) {
+        case .details:
+            let destination = segue.destination as! CommuteDetailsViewController
+            destination.commute = commute
+        }
+    }
+}
+
+// delegate called each time CoreLocation updates user location
+// locations are added to locationList array, where the most recent is the last
 extension NewCommuteViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
