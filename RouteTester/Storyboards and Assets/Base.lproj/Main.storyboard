@@ -58,23 +58,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CCa-Nf-1mf" userLabel="Data Stack View">
-                                <rect key="frame" x="39" y="149" width="72" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CCa-Nf-1mf" userLabel="Data Stack View">
+                                <rect key="frame" x="10" y="70" width="300" height="49"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuB-ru-ta6">
-                                        <rect key="frame" x="0.0" y="0.0" width="72" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuB-ru-ta6">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Time: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0I-QB-Ngb">
-                                        <rect key="frame" x="0.0" y="28.5" width="47" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0I-QB-Ngb">
+                                        <rect key="frame" x="0.0" y="28.5" width="290" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="m0I-QB-Ngb" secondAttribute="trailing" constant="10" id="2ac-H9-V7b"/>
+                                    <constraint firstAttribute="trailing" secondItem="TuB-ru-ta6" secondAttribute="trailing" constant="10" id="po8-8T-CiB"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BS2-Vr-jBP">
                                 <rect key="frame" x="138" y="380" width="32" height="30"/>
@@ -94,6 +97,11 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XPu-wZ-9vb" firstAttribute="trailing" secondItem="CCa-Nf-1mf" secondAttribute="trailing" constant="10" id="hvc-ey-m9J"/>
+                            <constraint firstItem="CCa-Nf-1mf" firstAttribute="top" secondItem="XPu-wZ-9vb" secondAttribute="top" constant="50" id="qtZ-6s-0UO"/>
+                            <constraint firstItem="CCa-Nf-1mf" firstAttribute="leading" secondItem="XPu-wZ-9vb" secondAttribute="leading" constant="10" id="zxp-EV-RHv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XPu-wZ-9vb"/>
                     </view>
                     <connections>
