@@ -69,7 +69,7 @@ class NewCommuteViewController: UIViewController {
         startButton.isHidden = false
         stopButton.isHidden = true
         
-        //locationManager.stopUpdatingLocation()
+        locationManager.stopUpdatingLocation()
     }
     
     func eachSecond() {
@@ -85,11 +85,12 @@ class NewCommuteViewController: UIViewController {
         timeLabel.text = "Time:  \(formattedTime)"
     }
     
-
+    // start button tapped
     @IBAction func start(_ sender: Any) {
         startCommute()
     }
     
+    // stop button tapped
     @IBAction func stopTapped(_ sender: UIButton) {
         let alertController = UIAlertController(title: "End commute?",
                                                 message: "Do you wish to finish logging your commute?",
@@ -98,6 +99,7 @@ class NewCommuteViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
             self.stopCommute()
             self.saveCommute()
+            // segue to commute details VC
             self.performSegue(withIdentifier: .details, sender: nil)
         })
         alertController.addAction(UIAlertAction(title: "Discard", style: .destructive) { _ in
@@ -118,11 +120,13 @@ class NewCommuteViewController: UIViewController {
     }
     
     private func saveCommute() {
+        // create new Commute object and initialize its values
         let newCommute = Commute(context: CoreDataStack.context)
         newCommute.distance = distance.value
         newCommute.duration = Int16(seconds)
         newCommute.timestamp = Date()
         
+        // create Location object for each location collected and add to Commute object
         for location in locationList {
             let locationObject = Location(context: CoreDataStack.context)
             locationObject.timestamp = location.timestamp

@@ -110,6 +110,7 @@
                         <outlet property="startButton" destination="3H3-s1-AuB" id="6Tx-U8-tVB"/>
                         <outlet property="stopButton" destination="BS2-Vr-jBP" id="GTy-hZ-DG2"/>
                         <outlet property="timeLabel" destination="m0I-QB-Ngb" id="8fm-XY-Mry"/>
+                        <segue destination="gEk-3M-Vds" kind="show" identifier="CommuteDetailsViewController" id="bPc-rY-Dyu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Los-bw-qsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
