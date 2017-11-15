@@ -21,6 +21,7 @@
 		4D808D841FB7B32300118B0F /* CommuteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D808D831FB7B32300118B0F /* CommuteDetailsViewController.swift */; };
 		4D808D861FB7C7D800118B0F /* StoryboardSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D808D851FB7C7D800118B0F /* StoryboardSupport.swift */; };
 		4D808D881FB7CB8500118B0F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D808D871FB7CB8500118B0F /* Default-568h@2x.png */; };
+		4D808D8A1FBBE3D400118B0F /* FormatDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D808D891FBBE3D400118B0F /* FormatDisplay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		4D808D831FB7B32300118B0F /* CommuteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteDetailsViewController.swift; sourceTree = "<group>"; };
 		4D808D851FB7C7D800118B0F /* StoryboardSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardSupport.swift; sourceTree = "<group>"; };
 		4D808D871FB7CB8500118B0F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4D808D891FBBE3D400118B0F /* FormatDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDisplay.swift; sourceTree = "<group>"; };
 		6851A16856AE004D5AB12A0B /* Pods_RouteTester.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RouteTester.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 				4D808D7F1FB7AB9900118B0F /* ViewControllers */,
 				4D808D821FB7B13F00118B0F /* Supporting Files */,
 				4D808D801FB7ABBA00118B0F /* CoreData */,
+				4D808D891FBBE3D400118B0F /* FormatDisplay.swift */,
 			);
 			path = RouteTester;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				4D808D7E1FB7AB4B00118B0F /* CoreDataStack.swift in Sources */,
 				4D2152211FB3BCD500BAE10F /* ViewController.swift in Sources */,
 				4D808D791FB3E7FB00118B0F /* MemoryTest.swift in Sources */,
+				4D808D8A1FBBE3D400118B0F /* FormatDisplay.swift in Sources */,
 				4D2152271FB3BCD500BAE10F /* RouteTester.xcdatamodeld in Sources */,
 				4D808D841FB7B32300118B0F /* CommuteDetailsViewController.swift in Sources */,
 				4D21521F1FB3BCD500BAE10F /* AppDelegate.swift in Sources */,
