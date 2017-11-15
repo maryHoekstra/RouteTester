@@ -15,13 +15,12 @@ class NewCommuteViewController: UIViewController {
     @IBOutlet weak var dataStackView: UIStackView!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     
 //    @IBOutlet weak var launchPromptStackView: UIStackView!
-//    @IBOutlet weak var dataStackView: UIStackView!
 
-    
     private var commute: Commute?
     
     //private let locationManager = LocationManager.shared
@@ -72,8 +71,8 @@ class NewCommuteViewController: UIViewController {
 //        paceLabel.text = "Pace:  \(formattedPace)"
 //    }
     
-    
-    @IBAction func startTapped(_ sender: UIButton) {
+
+    @IBAction func start(_ sender: Any) {
         startCommute()
     }
     

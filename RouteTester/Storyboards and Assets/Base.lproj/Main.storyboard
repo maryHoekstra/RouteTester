@@ -76,28 +76,22 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mmf-QS-4uS" userLabel="Button Stack View">
-                                <rect key="frame" x="144" y="315" width="34" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BS2-Vr-jBP">
+                                <rect key="frame" x="138" y="380" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDg-MP-1Xq">
-                                        <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
-                                        <state key="normal" title="Stop"/>
-                                        <connections>
-                                            <action selector="startTapped:" destination="im6-Xg-9To" eventType="touchUpInside" id="sM1-NX-13Q"/>
-                                            <action selector="stopTapped:" destination="im6-Xg-9To" eventType="touchUpInside" id="Rc3-3H-eBv"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSc-xf-ptl">
-                                        <rect key="frame" x="0.0" y="30" width="34" height="30"/>
-                                        <state key="normal" title="Start"/>
-                                        <connections>
-                                            <action selector="startTapped:" destination="im6-Xg-9To" eventType="touchUpInside" id="klc-Cn-JKz"/>
-                                            <action selector="stopTapped:" destination="im6-Xg-9To" eventType="touchUpInside" id="FMD-ok-Dwc"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopTapped:" destination="im6-Xg-9To" eventType="touchUpInside" id="O3R-IR-u4Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3H3-s1-AuB">
+                                <rect key="frame" x="137" y="328" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="start:" destination="im6-Xg-9To" eventType="touchUpInside" id="hrt-Qt-dfn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="XPu-wZ-9vb"/>
@@ -105,8 +99,8 @@
                     <connections>
                         <outlet property="dataStackView" destination="CCa-Nf-1mf" id="InZ-d9-QO8"/>
                         <outlet property="distanceLabel" destination="TuB-ru-ta6" id="tHT-C1-JBT"/>
-                        <outlet property="startButton" destination="MSc-xf-ptl" id="N39-du-xeM"/>
-                        <outlet property="stopButton" destination="DDg-MP-1Xq" id="bep-Jd-odQ"/>
+                        <outlet property="startButton" destination="3H3-s1-AuB" id="6Tx-U8-tVB"/>
+                        <outlet property="stopButton" destination="BS2-Vr-jBP" id="GTy-hZ-DG2"/>
                         <outlet property="timeLabel" destination="m0I-QB-Ngb" id="8fm-XY-Mry"/>
                     </connections>
                 </viewController>
