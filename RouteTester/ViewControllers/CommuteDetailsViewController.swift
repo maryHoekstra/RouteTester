@@ -23,5 +23,17 @@ class CommuteDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    private func configureView() {
+        let distance = Measurement(value: commute.distance, unit: UnitLength.meters)
+        let seconds = Int(commute.duration)
+        let formattedDistance = FormatDisplay.distance(distance)
+        let formattedDate = FormatDisplay.date(commute.timestamp)
+        let formattedTime = FormatDisplay.time(seconds)
+        
+        distanceLabel.text = "Distance:  \(formattedDistance)"
+        dateLabel.text = formattedDate
+        timeLabel.text = "Time:  \(formattedTime)"
+    }
+    
 
 }
