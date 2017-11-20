@@ -125,48 +125,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tlf-LE-TOx">
-                                <rect key="frame" x="0.0" y="37" width="320" height="268"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVC-Gh-4kp">
+                                <rect key="frame" x="62" y="356" width="196" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEg-Iq-ddN">
+                                <rect key="frame" x="62" y="403" width="196" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRy-6a-PuO">
+                                <rect key="frame" x="62" y="452" width="137" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Oze-nZ-XXE">
+                                <rect key="frame" x="0.0" y="66" width="320" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LKO-Zt-li6">
-                                <rect key="frame" x="20" y="357" width="290" height="101.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4PH-6q-y63">
-                                        <rect key="frame" x="0.0" y="0.0" width="270" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jx8-KT-z8p">
-                                        <rect key="frame" x="0.0" y="40.5" width="270" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oI-g7-zsN">
-                                        <rect key="frame" x="0.0" y="81" width="270" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="9oI-g7-zsN" secondAttribute="trailing" constant="20" id="Eqi-pf-RaG"/>
-                                    <constraint firstAttribute="trailing" secondItem="4PH-6q-y63" secondAttribute="trailing" constant="20" id="Ew3-oM-RZZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="Jx8-KT-z8p" secondAttribute="trailing" constant="20" id="ghu-3w-S0a"/>
-                                </constraints>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ovw-K0-KU5" firstAttribute="trailing" secondItem="LKO-Zt-li6" secondAttribute="trailing" constant="20" id="B9T-LH-HNu"/>
-                            <constraint firstItem="LKO-Zt-li6" firstAttribute="leading" secondItem="ovw-K0-KU5" secondAttribute="leading" constant="20" id="V4m-c0-AJi"/>
-                            <constraint firstItem="tlf-LE-TOx" firstAttribute="leading" secondItem="ovw-K0-KU5" secondAttribute="leading" id="jvw-LO-O7G"/>
-                            <constraint firstItem="tlf-LE-TOx" firstAttribute="trailing" secondItem="ovw-K0-KU5" secondAttribute="trailing" id="mVf-LA-HQv"/>
-                            <constraint firstItem="ovw-K0-KU5" firstAttribute="trailing" secondItem="LKO-Zt-li6" secondAttribute="trailing" constant="10" id="nXw-6N-wDK"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ovw-K0-KU5"/>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="QVC-Gh-4kp" id="JzM-es-o6J"/>
+                        <outlet property="distanceLabel" destination="eEg-Iq-ddN" id="cSF-3g-2xo"/>
+                        <outlet property="mapView" destination="Oze-nZ-XXE" id="Ulw-CM-YjC"/>
+                        <outlet property="timeLabel" destination="yRy-6a-PuO" id="9KH-nS-jOw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6L-Rw-Iwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
