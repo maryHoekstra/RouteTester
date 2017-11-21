@@ -33,6 +33,16 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func Memory(_ sender: UIButton) {
+        let MemoryTestTaskViewController = ORKTaskViewController(task: MemoryTest, taskRun: nil)
+        MemoryTestTaskViewController.delegate = self
+        present(MemoryTestTaskViewController, animated: true, completion: nil)
+    }
+    
+    
+
+    
+    
 }
 
 // view controller implements task view controller delegate 
