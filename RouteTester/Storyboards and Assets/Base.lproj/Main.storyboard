@@ -58,20 +58,30 @@
             </objects>
             <point key="canvasLocation" x="-2" y="30"/>
         </scene>
-        <!--View Controller-->
+        <!--OnboardingViewController-->
         <scene sceneID="VLX-WN-T28">
             <objects>
-                <viewController id="eLE-cP-mPx" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingViewController" title="OnboardingViewController" id="eLE-cP-mPx" customClass="OnboardingViewController" customModule="RouteTester" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PCj-Eb-YuL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqG-p3-zYx">
+                                <rect key="frame" x="124" y="338" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Join Study"/>
+                                <connections>
+                                    <action selector="Join:" destination="eLE-cP-mPx" eventType="touchUpInside" id="haE-vK-oP7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="eyT-Yg-vWf"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1rE-F9-L1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6" y="799"/>
+            <point key="canvasLocation" x="-818" y="30"/>
         </scene>
         <!--New Commute View Controller-->
         <scene sceneID="sFg-Vd-sSO">

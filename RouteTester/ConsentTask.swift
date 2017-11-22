@@ -26,5 +26,12 @@ public var ConsentTask: ORKOrderedTask {
     
     steps += [reviewConsentStep]
     
+    let completionStep = ORKCompletionStep(identifier: "CompletionStep")
+    completionStep.title = NSLocalizedString("Welcome aboard.", comment: "")
+    completionStep.text = NSLocalizedString("Thank you for joining this study.", comment: "")
+    
+    steps += [completionStep]
+    
+
     return ORKOrderedTask(identifier: "ConsentTask", steps: steps)
 }

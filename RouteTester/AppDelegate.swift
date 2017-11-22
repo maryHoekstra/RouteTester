@@ -16,7 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var viewController: UIViewController
+        
+        // if user has not consented yet
+        //UserDefaults.standard.set(false,forKey: "UserConsented")
+        //print(UserDefaults.standard.value(forKey: "UserConsented") as? Bool)
+        let userConsented = UserDefaults.standard.bool(forKey: "UserConsented")
+        if !userConsented {
+            // show onboarding screen
+            print("got here")
+            viewController = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
+        } else {
+        // show main screen
+            print("apparently we've consented")
+            viewController = storyboard.instantiateInitialViewController()!
+        }
+        
+        self.window?.rootViewController = viewController
+        self.window?.makeKeyAndVisible()
         
         
         let locationManager = LocationManager.shared

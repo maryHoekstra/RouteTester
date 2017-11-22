@@ -16,12 +16,12 @@ public var ConsentDocument: ORKConsentDocument {
     
     let consentSectionTypes: [ORKConsentSectionType] = [
         .overview,
-        .dataGathering,
-        .privacy,
-        .dataUse,
-        .timeCommitment,
-        .studySurvey,
-        .studyTasks,
+        //.dataGathering,
+        //.privacy,
+        //.dataUse,
+        //.timeCommitment,
+        //.studySurvey,
+        //.studyTasks,
         .withdrawing
     ]
     
