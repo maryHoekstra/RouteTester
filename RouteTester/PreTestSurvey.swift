@@ -24,7 +24,6 @@ public var PreTestSurvey: ORKOrderedTask {
     let restedAnswerFormat = ORKNumericAnswerFormat(style: ORKNumericAnswerStyle.decimal, unit: "hours", minimum: 0, maximum: 24)
     let restedQuestionStepTitle = "How many hours of sleep did you get last night?"
     let restedQuestionStep = ORKQuestionStep(identifier: "restedQuestionStep",title: restedQuestionStepTitle, answer: restedAnswerFormat)
-    //restedQuestionStep.image = UIImage(named: "Cat")
     steps += [restedQuestionStep]
     
     // How healthy are you today?;{'Normal','Somewhat sick','Very sick'}

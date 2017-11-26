@@ -31,7 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
         // show main screen
             print("apparently we've consented")
-            viewController = storyboard.instantiateInitialViewController()!
+            viewController = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
+            //viewController = storyboard.instantiateInitialViewController()!
         }
         
         self.window?.rootViewController = viewController

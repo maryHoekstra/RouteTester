@@ -30,7 +30,10 @@ class OnboardingViewController: UIViewController, ORKTaskViewControllerDelegate 
                     // store results of consenst step in User Defaults
                     UserDefaults.standard.set(signatureResult.consented,forKey: "UserConsented")
                     print(signatureResult.consented)
-                    taskViewController.dismiss(animated: true, completion: nil)
+                    taskViewController.dismiss(animated: true, completion: {
+                        let svc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                        self.present(svc, animated: true, completion: nil)
+                    })
             }
         case .discarded, .failed, .saved:
             taskViewController.dismiss(animated: true, completion: nil)
