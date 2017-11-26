@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D11B6D61FCA390C00991802 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB199D61FCA386E006A563B /* ResearchKit.framework */; };
 		4D11B6D71FCA390C00991802 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB199D61FCA386E006A563B /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4D11B6DC1FCAF56100991802 /* MemoryTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11B6DB1FCAF56100991802 /* MemoryTestViewController.swift */; };
 		4D21521F1FB3BCD500BAE10F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D21521E1FB3BCD500BAE10F /* AppDelegate.swift */; };
 		4D2152211FB3BCD500BAE10F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2152201FB3BCD500BAE10F /* HomeViewController.swift */; };
 		4D2152241FB3BCD500BAE10F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D2152221FB3BCD500BAE10F /* Main.storyboard */; };
@@ -68,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4D11B6DB1FCAF56100991802 /* MemoryTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTestViewController.swift; sourceTree = "<group>"; };
 		4D21521B1FB3BCD500BAE10F /* RouteTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouteTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D21521E1FB3BCD500BAE10F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D2152201FB3BCD500BAE10F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				4D808D7B1FB5481300118B0F /* NewCommuteViewController.swift */,
 				4D808D831FB7B32300118B0F /* CommuteDetailsViewController.swift */,
 				4D808D941FC3CBA000118B0F /* OnboardingViewController.swift */,
+				4D11B6DB1FCAF56100991802 /* MemoryTestViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				4D808D7C1FB5481300118B0F /* NewCommuteViewController.swift in Sources */,
 				4D808D771FB3BEDC00118B0F /* PreTestSurvey.swift in Sources */,
 				4D808D951FC3CBA000118B0F /* OnboardingViewController.swift in Sources */,
+				4D11B6DC1FCAF56100991802 /* MemoryTestViewController.swift in Sources */,
 				4D808D931FC3AD2100118B0F /* ConsentTask.swift in Sources */,
 				4D808D861FB7C7D800118B0F /* StoryboardSupport.swift in Sources */,
 			);

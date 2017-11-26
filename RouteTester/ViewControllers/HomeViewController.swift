@@ -29,13 +29,15 @@ class HomeViewController: UIViewController, ORKTaskViewControllerDelegate {
         let PreTestTaskViewController = ORKTaskViewController(task: PreTestSurvey, taskRun: nil)
         PreTestTaskViewController.delegate = self
         present(PreTestTaskViewController, animated: true, completion: nil)
-        // present memory test
-        
     }
     
     func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
         //Handle results with taskViewController.result
-        taskViewController.dismiss(animated: true, completion: nil)
+        // dismiss pre-test survery and present memory test
+        taskViewController.dismiss(animated: true, completion: {
+            let svc = self.storyboard!.instantiateViewController(withIdentifier: "MemoryTestViewController") as! MemoryTestViewController
+            self.present(svc, animated: true, completion: nil)
+        })
     }
     
     
