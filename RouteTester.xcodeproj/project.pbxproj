@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1CFC94281EF60356EE8F35E1 /* Pods_RouteTester.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6851A16856AE004D5AB12A0B /* Pods_RouteTester.framework */; };
+		4D11B6D61FCA390C00991802 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB199D61FCA386E006A563B /* ResearchKit.framework */; };
+		4D11B6D71FCA390C00991802 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB199D61FCA386E006A563B /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4D21521F1FB3BCD500BAE10F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D21521E1FB3BCD500BAE10F /* AppDelegate.swift */; };
 		4D2152211FB3BCD500BAE10F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2152201FB3BCD500BAE10F /* ViewController.swift */; };
 		4D2152241FB3BCD500BAE10F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D2152221FB3BCD500BAE10F /* Main.storyboard */; };
@@ -28,9 +29,45 @@
 		4D808D951FC3CBA000118B0F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D808D941FC3CBA000118B0F /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4D11B6D81FCA390C00991802 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4DB199CF1FCA386E006A563B /* ResearchKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B183A4731A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		4DB199D51FCA386E006A563B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4DB199CF1FCA386E006A563B /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B183A5951A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		4DB199D71FCA386E006A563B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4DB199CF1FCA386E006A563B /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
+			remoteInfo = ResearchKitTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4D11B6DA1FCA390C00991802 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4D11B6D71FCA390C00991802 /* ResearchKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		18B3B9D5B65CC834CDB7F58E /* Pods-RouteTester.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RouteTester.release.xcconfig"; path = "Pods/Target Support Files/Pods-RouteTester/Pods-RouteTester.release.xcconfig"; sourceTree = "<group>"; };
-		1A98B4BA426592B6A2D7F7E3 /* Pods-RouteTester.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RouteTester.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RouteTester/Pods-RouteTester.debug.xcconfig"; sourceTree = "<group>"; };
 		4D21521B1FB3BCD500BAE10F /* RouteTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouteTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D21521E1FB3BCD500BAE10F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D2152201FB3BCD500BAE10F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,7 +88,7 @@
 		4D808D901FC3AB4700118B0F /* ConsentDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
 		4D808D921FC3AD2100118B0F /* ConsentTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
 		4D808D941FC3CBA000118B0F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		6851A16856AE004D5AB12A0B /* Pods_RouteTester.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RouteTester.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DB199CF1FCA386E006A563B /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = "../../TestProject/ResearchKit-master/ResearchKit.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CFC94281EF60356EE8F35E1 /* Pods_RouteTester.framework in Frameworks */,
+				4D11B6D61FCA390C00991802 /* ResearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,11 +106,10 @@
 		4D2152121FB3BCD500BAE10F = {
 			isa = PBXGroup;
 			children = (
+				4DB199CF1FCA386E006A563B /* ResearchKit.xcodeproj */,
 				4D808D871FB7CB8500118B0F /* Default-568h@2x.png */,
 				4D21521D1FB3BCD500BAE10F /* RouteTester */,
 				4D21521C1FB3BCD500BAE10F /* Products */,
-				8DADA92570F9FBE467BF68B7 /* Pods */,
-				CFD8A4655DBA314DE06CF90D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,21 +178,13 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8DADA92570F9FBE467BF68B7 /* Pods */ = {
+		4DB199D01FCA386E006A563B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1A98B4BA426592B6A2D7F7E3 /* Pods-RouteTester.debug.xcconfig */,
-				18B3B9D5B65CC834CDB7F58E /* Pods-RouteTester.release.xcconfig */,
+				4DB199D61FCA386E006A563B /* ResearchKit.framework */,
+				4DB199D81FCA386E006A563B /* ResearchKitTests.xctest */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		CFD8A4655DBA314DE06CF90D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6851A16856AE004D5AB12A0B /* Pods_RouteTester.framework */,
-			);
-			name = Frameworks;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,16 +194,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D2152301FB3BCD500BAE10F /* Build configuration list for PBXNativeTarget "RouteTester" */;
 			buildPhases = (
-				95F096B83CA78B53DBAB4A8D /* [CP] Check Pods Manifest.lock */,
 				4D2152171FB3BCD500BAE10F /* Sources */,
 				4D2152181FB3BCD500BAE10F /* Frameworks */,
 				4D2152191FB3BCD500BAE10F /* Resources */,
-				FA9F22D32163A9765215600B /* [CP] Embed Pods Frameworks */,
-				56A3790380DA312E990AE200 /* [CP] Copy Pods Resources */,
+				4D11B6DA1FCA390C00991802 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4D11B6D91FCA390C00991802 /* PBXTargetDependency */,
 			);
 			name = RouteTester;
 			productName = RouteTester;
@@ -214,12 +241,35 @@
 			mainGroup = 4D2152121FB3BCD500BAE10F;
 			productRefGroup = 4D21521C1FB3BCD500BAE10F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4DB199D01FCA386E006A563B /* Products */;
+					ProjectRef = 4DB199CF1FCA386E006A563B /* ResearchKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				4D21521A1FB3BCD500BAE10F /* RouteTester */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4DB199D61FCA386E006A563B /* ResearchKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ResearchKit.framework;
+			remoteRef = 4DB199D51FCA386E006A563B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4DB199D81FCA386E006A563B /* ResearchKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ResearchKitTests.xctest;
+			remoteRef = 4DB199D71FCA386E006A563B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4D2152191FB3BCD500BAE10F /* Resources */ = {
@@ -234,60 +284,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		56A3790380DA312E990AE200 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RouteTester/Pods-RouteTester-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		95F096B83CA78B53DBAB4A8D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RouteTester-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FA9F22D32163A9765215600B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RouteTester/Pods-RouteTester-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ResearchKit/ResearchKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ResearchKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RouteTester/Pods-RouteTester-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4D2152171FB3BCD500BAE10F /* Sources */ = {
@@ -312,6 +308,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4D11B6D91FCA390C00991802 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ResearchKit;
+			targetProxy = 4D11B6D81FCA390C00991802 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4D2152221FB3BCD500BAE10F /* Main.storyboard */ = {
@@ -442,8 +446,8 @@
 		};
 		4D2152311FB3BCD500BAE10F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A98B4BA426592B6A2D7F7E3 /* Pods-RouteTester.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UY74P6L3CK;
@@ -458,8 +462,8 @@
 		};
 		4D2152321FB3BCD500BAE10F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18B3B9D5B65CC834CDB7F58E /* Pods-RouteTester.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UY74P6L3CK;
