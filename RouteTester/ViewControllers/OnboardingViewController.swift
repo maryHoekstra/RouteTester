@@ -32,7 +32,7 @@ class OnboardingViewController: UIViewController, ORKTaskViewControllerDelegate 
                     print(signatureResult.consented)
                     // dismiss taskViewController and present home view controller 
                     taskViewController.dismiss(animated: true, completion: {
-                        let svc = self.storyboard!.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                        let svc = self.storyboard!.instantiateViewController(withIdentifier: "DemographicsViewController") as! DemographicsViewController
                         self.present(svc, animated: true, completion: nil)
                     })
             }

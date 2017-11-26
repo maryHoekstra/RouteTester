@@ -6,9 +6,9 @@
 //  Copyright © 2017 Mary Hoekstra. All rights reserved.
 //
 
-import Foundation
 import ResearchKit
 
+// Task to present Memory Test
 public var MemoryTest: ORKOrderedTask {
     
     var steps = [ORKStep]()
