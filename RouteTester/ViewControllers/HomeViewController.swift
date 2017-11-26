@@ -9,7 +9,7 @@
 import UIKit
 import ResearchKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, ORKTaskViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,24 +33,16 @@ class HomeViewController: UIViewController {
         
     }
     
+    func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
+        //Handle results with taskViewController.result
+        taskViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    
     @IBAction func Memory(_ sender: UIButton) {
         let MemoryTestTaskViewController = ORKTaskViewController(task: MemoryTest, taskRun: nil)
         MemoryTestTaskViewController.delegate = self
         present(MemoryTestTaskViewController, animated: true, completion: nil)
-    }
-    
-    
-
-    
-    
-}
-
-// view controller implements task view controller delegate 
-extension HomeViewController : ORKTaskViewControllerDelegate {
-    
-    func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
-        //Handle results with taskViewController.result
-        taskViewController.dismiss(animated: true, completion: nil)
     }
     
 }
