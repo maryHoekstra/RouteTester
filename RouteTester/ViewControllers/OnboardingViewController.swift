@@ -30,8 +30,9 @@ class OnboardingViewController: UIViewController, ORKTaskViewControllerDelegate 
                     // store results of consenst step in User Defaults
                     UserDefaults.standard.set(signatureResult.consented,forKey: "UserConsented")
                     print(signatureResult.consented)
+                    // dismiss taskViewController and present home view controller 
                     taskViewController.dismiss(animated: true, completion: {
-                        let svc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                        let svc = self.storyboard!.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                         self.present(svc, animated: true, completion: nil)
                     })
             }

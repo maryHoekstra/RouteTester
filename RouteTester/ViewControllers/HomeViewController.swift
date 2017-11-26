@@ -9,7 +9,7 @@
 import UIKit
 import ResearchKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
 }
 
 // view controller implements task view controller delegate 
-extension ViewController : ORKTaskViewControllerDelegate {
+extension HomeViewController : ORKTaskViewControllerDelegate {
     
     func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
         //Handle results with taskViewController.result

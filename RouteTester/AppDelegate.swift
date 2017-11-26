@@ -20,10 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var viewController: UIViewController
         
-        // if user has not consented yet
-        //UserDefaults.standard.set(false,forKey: "UserConsented")
-        //print(UserDefaults.standard.value(forKey: "UserConsented") as? Bool)
         let userConsented = UserDefaults.standard.bool(forKey: "UserConsented")
+        // if user has not consented yet
         if !userConsented {
             // show onboarding screen
             print("got here")
@@ -31,8 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
         // show main screen
             print("apparently we've consented")
-            viewController = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
-            //viewController = storyboard.instantiateInitialViewController()!
+            viewController = storyboard.instantiateInitialViewController()!
         }
         
         self.window?.rootViewController = viewController
