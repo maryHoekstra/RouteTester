@@ -38,6 +38,8 @@ class NewCommuteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dataStackView.isHidden = true
+        // request location usage from user 
+        locationManager.requestWhenInUseAuthorization()
     }
     
     // location updates will stop when user navigates away from page

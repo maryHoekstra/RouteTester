@@ -36,8 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         
-        let locationManager = LocationManager.shared
-        locationManager.requestWhenInUseAuthorization()
+//        let locationManager = LocationManager.shared
+//        locationManager.requestWhenInUseAuthorization()
         return true
     }
 
