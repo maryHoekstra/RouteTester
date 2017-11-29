@@ -16,7 +16,7 @@ public var DemographicsSurvey: ORKOrderedTask {
     let instructionStep = ORKInstructionStep(identifier: "IntroStep")
     instructionStep.title = "Demographics Survey"
     instructionStep.text = "Before using this app, please fill out this 5-minute, 30-item questionnare."
-    instructionStep.image = UIImage(named: "Cat")!
+    //instructionStep.image = UIImage(named: "Cat")!
     steps += [instructionStep]
     
     // What is your age (in years)? enforce number 18-130

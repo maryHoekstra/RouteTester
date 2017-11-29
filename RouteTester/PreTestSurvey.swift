@@ -16,7 +16,7 @@ public var PreTestSurvey: ORKOrderedTask {
     let instructionStep = ORKInstructionStep(identifier: "IntroStep")
     instructionStep.title = "Pre-Test Questionnaire"
     instructionStep.text = "Before taking the test, please fill out this 4-item questionnare."
-    instructionStep.image = UIImage(named: "Cat")!
+    //instructionStep.image = UIImage(named: "Cat")!
     steps += [instructionStep]
     
 //    // How many hours of sleep did you get last night?;{'~isnan(num) & num>=0','must be a positive number'};{};[];{}

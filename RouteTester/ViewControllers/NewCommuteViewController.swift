@@ -38,7 +38,7 @@ class NewCommuteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dataStackView.isHidden = true
-        // request location usage from user 
+        // request location usage from user
         locationManager.requestWhenInUseAuthorization()
     }
     
@@ -51,6 +51,8 @@ class NewCommuteViewController: UIViewController {
     
     private func startCommute() {
         //launchPromptStackView.isHidden = true
+    
+        
         dataStackView.isHidden = false
         startButton.isHidden = true
         stopButton.isHidden = false
