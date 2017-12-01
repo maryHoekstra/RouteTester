@@ -13,6 +13,23 @@
 		4D11B6DE1FCAFED900991802 /* NavigationReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11B6DD1FCAFED900991802 /* NavigationReport.swift */; };
 		4D11B6E11FCB010900991802 /* DemographicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11B6E01FCB010900991802 /* DemographicsViewController.swift */; };
 		4D11B6E31FCB021100991802 /* DemographicsSurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11B6E21FCB021100991802 /* DemographicsSurvey.swift */; };
+		4D11B6E71FD0F76B00991802 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D11B6E61FD0F76B00991802 /* GoogleMapsBase.framework */; };
+		4D11B6E91FD0F78900991802 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D11B6E81FD0F78900991802 /* GoogleMaps.framework */; };
+		4D11B6EB1FD0F7A300991802 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D11B6EA1FD0F7A200991802 /* GoogleMapsCore.framework */; };
+		4D11B6ED1FD0F82400991802 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4D11B6EC1FD0F82400991802 /* GoogleMaps.bundle */; };
+		4D11B6F01FD0F87700991802 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D11B6EF1FD0F86500991802 /* Accelerate.framework */; };
+		4D11B6F21FD0F88C00991802 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D11B6F11FD0F88000991802 /* CoreData.framework */; };
+		4D11B6F51FD0F8A500991802 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D11B6F41FD0F89D00991802 /* CoreLocation.framework */; };
+		4D11B6F71FD0F8BD00991802 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D11B6F61FD0F8AF00991802 /* CoreTelephony.framework */; };
+		4D11B6F91FD0F8D000991802 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D11B6F81FD0F8C700991802 /* CoreText.framework */; };
+		4D11B6FB1FD0F8DE00991802 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D11B6FA1FD0F8D700991802 /* GLKit.framework */; };
+		4D11B6FD1FD0F8EF00991802 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D11B6FC1FD0F8E700991802 /* ImageIO.framework */; };
+		4D11B6FF1FD0F8FE00991802 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D11B6FE1FD0F8FE00991802 /* libc++.tbd */; };
+		4D11B7011FD0F90800991802 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D11B7001FD0F90800991802 /* libz.tbd */; };
+		4D11B7031FD0F91A00991802 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D11B7021FD0F91100991802 /* OpenGLES.framework */; };
+		4D11B7051FD0F92B00991802 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D11B7041FD0F92200991802 /* QuartzCore.framework */; };
+		4D11B7071FD0F93B00991802 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D11B7061FD0F93400991802 /* SystemConfiguration.framework */; };
+		4D11B7091FD0F94C00991802 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D11B7081FD0F94400991802 /* UIKit.framework */; };
 		4D21521F1FB3BCD500BAE10F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D21521E1FB3BCD500BAE10F /* AppDelegate.swift */; };
 		4D2152211FB3BCD500BAE10F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2152201FB3BCD500BAE10F /* HomeViewController.swift */; };
 		4D2152241FB3BCD500BAE10F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D2152221FB3BCD500BAE10F /* Main.storyboard */; };
@@ -76,6 +93,24 @@
 		4D11B6DD1FCAFED900991802 /* NavigationReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationReport.swift; sourceTree = "<group>"; };
 		4D11B6E01FCB010900991802 /* DemographicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemographicsViewController.swift; sourceTree = "<group>"; };
 		4D11B6E21FCB021100991802 /* DemographicsSurvey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemographicsSurvey.swift; sourceTree = "<group>"; };
+		4D11B6E61FD0F76B00991802 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
+		4D11B6E81FD0F78900991802 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		4D11B6EA1FD0F7A200991802 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsCore.framework; sourceTree = "<group>"; };
+		4D11B6EC1FD0F82400991802 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		4D11B6EF1FD0F86500991802 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		4D11B6F11FD0F88000991802 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4D11B6F31FD0F89400991802 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4D11B6F41FD0F89D00991802 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4D11B6F61FD0F8AF00991802 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		4D11B6F81FD0F8C700991802 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		4D11B6FA1FD0F8D700991802 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		4D11B6FC1FD0F8E700991802 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		4D11B6FE1FD0F8FE00991802 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		4D11B7001FD0F90800991802 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		4D11B7021FD0F91100991802 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		4D11B7041FD0F92200991802 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4D11B7061FD0F93400991802 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4D11B7081FD0F94400991802 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4D21521B1FB3BCD500BAE10F /* RouteTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouteTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D21521E1FB3BCD500BAE10F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D2152201FB3BCD500BAE10F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -104,20 +139,62 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D11B7091FD0F94C00991802 /* UIKit.framework in Frameworks */,
+				4D11B7071FD0F93B00991802 /* SystemConfiguration.framework in Frameworks */,
+				4D11B7051FD0F92B00991802 /* QuartzCore.framework in Frameworks */,
+				4D11B7031FD0F91A00991802 /* OpenGLES.framework in Frameworks */,
+				4D11B6FD1FD0F8EF00991802 /* ImageIO.framework in Frameworks */,
+				4D11B6FB1FD0F8DE00991802 /* GLKit.framework in Frameworks */,
+				4D11B6F91FD0F8D000991802 /* CoreText.framework in Frameworks */,
+				4D11B6F71FD0F8BD00991802 /* CoreTelephony.framework in Frameworks */,
+				4D11B7011FD0F90800991802 /* libz.tbd in Frameworks */,
+				4D11B6F51FD0F8A500991802 /* CoreLocation.framework in Frameworks */,
+				4D11B6F21FD0F88C00991802 /* CoreData.framework in Frameworks */,
+				4D11B6FF1FD0F8FE00991802 /* libc++.tbd in Frameworks */,
+				4D11B6F01FD0F87700991802 /* Accelerate.framework in Frameworks */,
+				4D11B6E91FD0F78900991802 /* GoogleMaps.framework in Frameworks */,
 				4D11B6D61FCA390C00991802 /* ResearchKit.framework in Frameworks */,
+				4D11B6E71FD0F76B00991802 /* GoogleMapsBase.framework in Frameworks */,
+				4D11B6EB1FD0F7A300991802 /* GoogleMapsCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D11B6EE1FD0F86500991802 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D11B7081FD0F94400991802 /* UIKit.framework */,
+				4D11B7061FD0F93400991802 /* SystemConfiguration.framework */,
+				4D11B7041FD0F92200991802 /* QuartzCore.framework */,
+				4D11B7021FD0F91100991802 /* OpenGLES.framework */,
+				4D11B7001FD0F90800991802 /* libz.tbd */,
+				4D11B6FE1FD0F8FE00991802 /* libc++.tbd */,
+				4D11B6FC1FD0F8E700991802 /* ImageIO.framework */,
+				4D11B6FA1FD0F8D700991802 /* GLKit.framework */,
+				4D11B6F81FD0F8C700991802 /* CoreText.framework */,
+				4D11B6F61FD0F8AF00991802 /* CoreTelephony.framework */,
+				4D11B6F41FD0F89D00991802 /* CoreLocation.framework */,
+				4D11B6F31FD0F89400991802 /* CoreGraphics.framework */,
+				4D11B6F11FD0F88000991802 /* CoreData.framework */,
+				4D11B6EF1FD0F86500991802 /* Accelerate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4D2152121FB3BCD500BAE10F = {
 			isa = PBXGroup;
 			children = (
+				4D11B6EC1FD0F82400991802 /* GoogleMaps.bundle */,
+				4D11B6EA1FD0F7A200991802 /* GoogleMapsCore.framework */,
+				4D11B6E81FD0F78900991802 /* GoogleMaps.framework */,
+				4D11B6E61FD0F76B00991802 /* GoogleMapsBase.framework */,
 				4DB199CF1FCA386E006A563B /* ResearchKit.xcodeproj */,
 				4D808D871FB7CB8500118B0F /* Default-568h@2x.png */,
 				4D21521D1FB3BCD500BAE10F /* RouteTester */,
 				4D21521C1FB3BCD500BAE10F /* Products */,
+				4D11B6EE1FD0F86500991802 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -292,6 +369,7 @@
 				4D808D881FB7CB8500118B0F /* Default-568h@2x.png in Resources */,
 				4D2152291FB3BCD500BAE10F /* Assets.xcassets in Resources */,
 				4D2152241FB3BCD500BAE10F /* Main.storyboard in Resources */,
+				4D11B6ED1FD0F82400991802 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +482,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -454,6 +533,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -467,6 +547,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UY74P6L3CK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = RouteTester/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mary.hoekstra.RouteTester;
@@ -483,6 +567,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UY74P6L3CK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = RouteTester/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mary.hoekstra.RouteTester;

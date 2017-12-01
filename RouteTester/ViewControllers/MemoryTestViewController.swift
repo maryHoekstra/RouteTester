@@ -9,13 +9,14 @@
 import UIKit
 import ResearchKit
 
-/*
- Presents memory test to user.
-*/
+
+// Creates memory test and presents it to the user.
 class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // create memory test
+        
     }
 
     override func didReceiveMemoryWarning() {
