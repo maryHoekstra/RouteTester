@@ -23,12 +23,10 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     
     var coordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082), CLLocationCoordinate2D(latitude: 44.230126, longitude: -76.491231),CLLocationCoordinate2D(latitude: 44.229375, longitude: -76.486359)]
     var images: [UIImage] = []
-    var when: DispatchTime = DispatchTime.now()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // create memory test
-        // load panoview from coordinate
+        
         let panoView = GMSPanoramaView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         
         panoView.delegate = self
@@ -64,7 +62,6 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     }
     
     @IBAction func LoadPressed(_ sender: UIButton) {
-        //self.TestView.image = ImageView.snapshot
         self.ImageView1.image = self.images[0]
         self.ImageView2.image = self.images[1]
         self.ImageView3.image = self.images[2]
@@ -85,6 +82,9 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     
     func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
         taskViewController.dismiss(animated: true, completion: {
+            // mark commute as tested
+            
+            // navigate back to home screen
             let svc = self.storyboard!.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
             self.present(svc, animated: true, completion: nil)
         })

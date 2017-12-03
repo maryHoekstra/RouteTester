@@ -16,7 +16,7 @@ public var NavigationReport: ORKOrderedTask {
     let instructionStep = ORKInstructionStep(identifier: "IntroStep")
     instructionStep.title = "Navigation Report"
     instructionStep.text = "Please fill out this 10-item questionnare."
-    instructionStep.image = UIImage(named: "Cat")!
+    //instructionStep.image = UIImage(named: "Cat1")!
     steps += [instructionStep]
     
 //    // How are you carrying your phone today? (mounted to belt, in a backpack, by hand, in a hand-held bag/briefcase/clutch purse, in a shoulder-mounted bag / briefcase / shoulder purse, pants pocket (waist), pants pocket (leg), shirt pocket (chest), coat/jacket pocket (waist), coat/jacket pocket (chest), other).

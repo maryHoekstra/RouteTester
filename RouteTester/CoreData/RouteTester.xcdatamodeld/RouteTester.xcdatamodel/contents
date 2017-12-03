@@ -3,6 +3,7 @@
     <entity name="Commute" representedClassName="Commute" syncable="YES" codeGenerationType="class">
         <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="duration" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tested" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="locations" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Location" inverseName="commute" inverseEntity="Location" syncable="YES"/>
     </entity>
@@ -13,7 +14,7 @@
         <relationship name="commute" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Commute" inverseName="locations" inverseEntity="Commute" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Commute" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Commute" positionX="-63" positionY="-18" width="128" height="120"/>
         <element name="Location" positionX="-54" positionY="18" width="128" height="105"/>
     </elements>
 </model>
