@@ -62,6 +62,7 @@ public var PreTestSurvey: ORKOrderedTask {
     let moodAnswerFormat: ORKTextChoiceAnswerFormat = ORKAnswerFormat.choiceAnswerFormat(with: .singleChoice, textChoices: moodChoices)
     
     let moodQuestionStep = ORKQuestionStep(identifier: "moodQuestionStep", title: moodQuestionStepTitle, answer: moodAnswerFormat)
+    moodQuestionStep.image = UIImage(named: "Cat1")!
     steps += [moodQuestionStep]
     
     // summary step

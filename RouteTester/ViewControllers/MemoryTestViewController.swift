@@ -15,41 +15,59 @@ import GoogleMaps
 class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate, GMSPanoramaViewDelegate {
     
     @IBOutlet weak var ImageView: UIImageView!
-
+    @IBOutlet weak var ImageView1: UIImageView!
+    @IBOutlet weak var ImageView2: UIImageView!
+    @IBOutlet weak var ImageView3: UIImageView!
     @IBOutlet weak var ActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var TestView: UIImageView!
+    
+    var coordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082), CLLocationCoordinate2D(latitude: 44.230126, longitude: -76.491231),CLLocationCoordinate2D(latitude: 44.229375, longitude: -76.486359)]
+    var images: [UIImage] = []
+    var when: DispatchTime = DispatchTime.now()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // create memory test
         // load panoview from coordinate
         let panoView = GMSPanoramaView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        
         panoView.delegate = self
         panoView.setAllGesturesEnabled(false)
+        self.ImageView.addSubview(panoView)
         
-        panoView.moveNearCoordinate(CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082))
-        //self.ImageView.addSubview(panoView)
+        var delay: Double = 0
+        // for each coordinate, move near coordinate
+        for coordinate in coordinates {
+            // increase delay on each iteration, so all views have the chance to be presented
+            self.delayWithSeconds(delay) {
+                panoView.moveNearCoordinate(coordinate)
+                // wait for view to load before taking a snapshot
+                self.delayWithSeconds(2) {
+                    let streetViewImage = self.ImageView.snapshot
+                    self.TestView.image = streetViewImage
+                    self.images.append(streetViewImage!)
+                }
+            }
+            delay = delay + 2
+        }
         
+    }
+    
+    func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
+        }
     }
     
     func panoramaView(_ view: GMSPanoramaView, didMoveTo panorama: GMSPanorama?) {
 
-        //self.ImageView.addSubview(view)
-        //let SnapshotView = view.snapshotView(afterScreenUpdates: true)
-        //self.ImageView.addSubview(view.snapshotView(afterScreenUpdates: true)!)
-        // can I add the pano to the heirarchy and then take a screenshot?
-        self.ImageView.addSubview(view)
-        self.ActivityIndicator.startAnimating()
-        //ImageView.isHidden = true
-        let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            self.TestView.image = self.ImageView.snapshot
-            self.ActivityIndicator.stopAnimating()
-        }
     }
     
     @IBAction func LoadPressed(_ sender: UIButton) {
-        self.TestView.image = ImageView.snapshot
+        //self.TestView.image = ImageView.snapshot
+        self.ImageView1.image = self.images[0]
+        self.ImageView2.image = self.images[1]
+        self.ImageView3.image = self.images[2]
     }
     
 
