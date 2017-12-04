@@ -119,7 +119,7 @@ class NewCommuteViewController: UIViewController {
         locationManager.delegate = self
         //locationManager.activityType = .fitness
         // minimum distance device must move before location is updated
-        locationManager.distanceFilter = 10
+        locationManager.distanceFilter = 100
         locationManager.startUpdatingLocation()
     }
     
