@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0F0A841FD4F2EF00C7C18A /* TestStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F0A831FD4F2EF00C7C18A /* TestStruct.swift */; };
 		4D11B6D61FCA390C00991802 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB199D61FCA386E006A563B /* ResearchKit.framework */; };
 		4D11B6D71FCA390C00991802 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB199D61FCA386E006A563B /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4D11B6DC1FCAF56100991802 /* MemoryTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11B6DB1FCAF56100991802 /* MemoryTestViewController.swift */; };
@@ -89,6 +90,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4D0F0A831FD4F2EF00C7C18A /* TestStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStruct.swift; sourceTree = "<group>"; };
 		4D11B6DB1FCAF56100991802 /* MemoryTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTestViewController.swift; sourceTree = "<group>"; };
 		4D11B6DD1FCAFED900991802 /* NavigationReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationReport.swift; sourceTree = "<group>"; };
 		4D11B6E01FCB010900991802 /* DemographicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemographicsViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 		4D21521D1FB3BCD500BAE10F /* RouteTester */ = {
 			isa = PBXGroup;
 			children = (
+				4D0F0A831FD4F2EF00C7C18A /* TestStruct.swift */,
 				4D21522D1FB3BCD500BAE10F /* Info.plist */,
 				4D21521E1FB3BCD500BAE10F /* AppDelegate.swift */,
 				4D808D761FB3BEDC00118B0F /* PreTestSurvey.swift */,
@@ -387,6 +390,7 @@
 				4D808D8C1FBBE4A800118B0F /* LocationManager.swift in Sources */,
 				4D808D8A1FBBE3D400118B0F /* FormatDisplay.swift in Sources */,
 				4D2152271FB3BCD500BAE10F /* RouteTester.xcdatamodeld in Sources */,
+				4D0F0A841FD4F2EF00C7C18A /* TestStruct.swift in Sources */,
 				4D808D841FB7B32300118B0F /* CommuteDetailsViewController.swift in Sources */,
 				4D11B6E11FCB010900991802 /* DemographicsViewController.swift in Sources */,
 				4D21521F1FB3BCD500BAE10F /* AppDelegate.swift in Sources */,

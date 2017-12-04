@@ -11,15 +11,13 @@ import ResearchKit
 import GoogleMaps
 import CoreData
 
-
-// Creates memory test and presents it to the user.
+// Creates memory test and presents MemoryTest task to user
 class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate, GMSPanoramaViewDelegate {
     
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var ImageView1: UIImageView!
     @IBOutlet weak var ImageView2: UIImageView!
     @IBOutlet weak var ImageView3: UIImageView!
-    @IBOutlet weak var ActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var TestView: UIImageView!
     
     @IBOutlet weak var ContinueButton: UIButton!
@@ -30,7 +28,6 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     var numLocations: Int?
     var coordinates: [CLLocationCoordinate2D] = []
 //    var coordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082), CLLocationCoordinate2D(latitude: 44.230126, longitude: -76.491231),CLLocationCoordinate2D(latitude: 44.229375, longitude: -76.486359)]
-    var images: [UIImage] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,8 +53,8 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
                 self.delayWithSeconds(2) {
                     let streetViewImage = self.ImageView.snapshot
                     self.TestView.image = streetViewImage
-                    self.images.append(streetViewImage!)
-                    if self.images.count == self.coordinates.count {
+                    Test.images.append(streetViewImage!)
+                    if Test.images.count == self.coordinates.count {
                         //make continue button available
                         self.ContinueButton.isEnabled = true
                     }
@@ -79,9 +76,9 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     }
     
     @IBAction func LoadPressed(_ sender: UIButton) {
-        self.ImageView1.image = self.images[0]
-        self.ImageView2.image = self.images[1]
-        self.ImageView3.image = self.images[2]
+//        self.ImageView1.image = self.images[0]
+//        self.ImageView2.image = self.images[1]
+//        self.ImageView3.image = self.images[2]
     }
     
 

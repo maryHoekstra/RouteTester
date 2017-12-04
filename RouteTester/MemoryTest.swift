@@ -13,12 +13,13 @@ public var MemoryTest: ORKOrderedTask {
     
     
     var steps = [ORKStep]()
-    var testImages: [UIImage] = []
+    //var testImages: [UIImage] = []
     // populate image array
-    testImages += [UIImage(named: "Cat1")!,UIImage(named: "Cat2")!,UIImage(named: "Cat3")!]
+//    testImages += [UIImage(named: "Cat1")!,UIImage(named: "Cat2")!,UIImage(named: "Cat3")!]
     var stepIdentifiers: [String] = ["Step1", "Step2", "Step3"]
     var imageIdentifiers: [String] = ["Img1","Img2","Img3"]
     var responseIdentifiers: [String] = ["Response1","Response2","Response3"]
+    
     
     // instructions
     let instructionStep = ORKInstructionStep(identifier: "IntroStep")
@@ -37,7 +38,7 @@ public var MemoryTest: ORKOrderedTask {
         let imageText = NSLocalizedString("Cat", comment: "")
     
         let imageChoices = [
-            ORKImageChoice(normalImage: testImages[i], selectedImage: nil, text: nil, value: imageText as NSCoding & NSCopying & NSObjectProtocol)
+            ORKImageChoice(normalImage: Test.images[i], selectedImage: nil, text: nil, value: imageText as NSCoding & NSCopying & NSObjectProtocol)
         ]
     
         // A first field, for displaying your image.
