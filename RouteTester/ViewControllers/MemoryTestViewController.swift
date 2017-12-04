@@ -22,6 +22,8 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     @IBOutlet weak var ActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var TestView: UIImageView!
     
+    @IBOutlet weak var ContinueButton: UIButton!
+    
     var commutes: [Commute]!
     var mostRecent: Commute!
     var locations: NSOrderedSet?
@@ -32,6 +34,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ContinueButton.isEnabled = false
         
         commutes = getCommutes()
         //let mostRecent = commutes.last
@@ -54,6 +57,10 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
                     let streetViewImage = self.ImageView.snapshot
                     self.TestView.image = streetViewImage
                     self.images.append(streetViewImage!)
+                    if self.images.count == self.coordinates.count {
+                        //make continue button available
+                        self.ContinueButton.isEnabled = true
+                    }
                 }
             }
             delay = delay + 2

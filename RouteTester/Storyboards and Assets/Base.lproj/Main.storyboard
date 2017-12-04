@@ -124,6 +124,7 @@
                         <viewLayoutGuide key="safeArea" id="ON4-iE-gi6"/>
                     </view>
                     <connections>
+                        <outlet property="ContinueButton" destination="dGZ-XH-G4b" id="j2b-lx-Z5u"/>
                         <outlet property="ImageView" destination="DTP-D3-eqe" id="OJr-3g-gkr"/>
                         <outlet property="ImageView1" destination="952-eF-3SY" id="NOS-S7-le3"/>
                         <outlet property="ImageView2" destination="wSW-Z8-H2h" id="fjz-ZV-Lkk"/>
