@@ -13,12 +13,14 @@ public var MemoryTest: ORKOrderedTask {
     
     
     var steps = [ORKStep]()
+    
+    // generate identifiers based on number of images
     //var testImages: [UIImage] = []
     // populate image array
 //    testImages += [UIImage(named: "Cat1")!,UIImage(named: "Cat2")!,UIImage(named: "Cat3")!]
-    var stepIdentifiers: [String] = ["Step1", "Step2", "Step3"]
-    var imageIdentifiers: [String] = ["Img1","Img2","Img3"]
-    var responseIdentifiers: [String] = ["Response1","Response2","Response3"]
+    //var stepIdentifiers: [String] = ["Step1", "Step2", "Step3"]
+    //var imageIdentifiers: [String] = ["Img1","Img2","Img3"]
+    //var responseIdentifiers: [String] = ["Response1","Response2","Response3"]
     
     
     // instructions
@@ -30,12 +32,11 @@ public var MemoryTest: ORKOrderedTask {
     // try looping through images
     
     //let questionText = "Rate your recollection on a scale of 1 to 5."
-    for i in 0 ..< imageIdentifiers.count {
-        let sampleStep = ORKFormStep(identifier: stepIdentifiers[i], title: nil, text: nil)
+    for i in 0 ..< Test.images.count {
+        let sampleStep = ORKFormStep(identifier: "step" + String(i), title: nil, text: nil)
         sampleStep.isOptional = false
     
-        //let image = UIImage(named: "Cat")!
-        let imageText = NSLocalizedString("Cat", comment: "")
+        let imageText = NSLocalizedString("Street View Image", comment: "")
     
         let imageChoices = [
             ORKImageChoice(normalImage: Test.images[i], selectedImage: nil, text: nil, value: imageText as NSCoding & NSCopying & NSObjectProtocol)
@@ -43,11 +44,11 @@ public var MemoryTest: ORKOrderedTask {
     
         // A first field, for displaying your image.
         //let formItem01Text = NSLocalizedString("Your Image", comment: "")
-        let formItem01 = ORKFormItem(identifier: imageIdentifiers[i], text: nil, answerFormat: ORKAnswerFormat.choiceAnswerFormat(with: imageChoices))
+        let formItem01 = ORKFormItem(identifier: Test.imageIdentifiers[i], text: nil, answerFormat: ORKAnswerFormat.choiceAnswerFormat(with: imageChoices))
     
         // A second field, for the scale.
         //let formItem02Text = NSLocalizedString("Your Scale", comment: "")
-        let formItem02 = ORKFormItem(identifier: responseIdentifiers[i], text: nil, answerFormat: ORKAnswerFormat.scale(withMaximumValue: 5, minimumValue: 1, defaultValue: 0, step: 1, vertical: false, maximumValueDescription: nil, minimumValueDescription: nil))
+        let formItem02 = ORKFormItem(identifier: "response" + String(i), text: nil, answerFormat: ORKAnswerFormat.scale(withMaximumValue: 5, minimumValue: 1, defaultValue: 0, step: 1, vertical: false, maximumValueDescription: nil, minimumValueDescription: nil))
     
         sampleStep.formItems = [
             formItem01,

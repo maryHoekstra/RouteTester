@@ -11,4 +11,5 @@ import UIKit
 
 struct Test {
     static var images: [UIImage] = []
+    static var imageIdentifiers: [String] = []
 }

@@ -33,8 +33,9 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     //,CLLocationCoordinate2D(latitude: 44.229375, longitude: -76.486359)
     // biosc:
     //CLLocationCoordinate2D(latitude: 44.226428, longitude: -76.491251)
+    // 230 barrie st. : CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)
     
-    var coordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)]
+    var coordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082),CLLocationCoordinate2D(latitude: 44.229375, longitude: -76.486359),CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,29 +55,24 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
         // for each coordinate, move near coordinate
         // clear images array in Test struct in case user keeps app open
         Test.images = []
+        Test.imageIdentifiers = []
         for coordinate in coordinates {
     
             // increase delay on each iteration, so all views have the chance to be presented
             self.delayWithSeconds(delay) {
                 
-                // this will be within delay code
-                
-                //             compute heading so that image faces building
-                //             get desired address from original gps coordinates by geocoding
-                //             get actual gps coordintates of address
-                //             compute heading between these two sets of coordinates
-                //             load street view image using original gps coordinates with heading
-                
+                // compute heading returns the proper heading for the pano, or 0 if there's an error in geocoding 
                 self.computeHeading(coordinate: coordinate) { (heading) in
                     print("!!!!!!")
                     print(heading)
-                    panoView.camera = GMSPanoramaCamera(heading: heading, pitch: -10, zoom: 1)
+                    panoView.camera = GMSPanoramaCamera(heading: heading, pitch: -10, zoom: 1.5)
                     panoView.moveNearCoordinate(coordinate)
                     // wait for view to load before taking a snapshot
                     self.delayWithSeconds(2) {
                         let streetViewImage = self.ImageView.snapshot
                         self.TestView.image = streetViewImage
                         Test.images.append(streetViewImage!)
+                        Test.imageIdentifiers.append(String(describing: coordinate))
                         if Test.images.count == self.coordinates.count {
                             //make continue button available
                             self.ContinueButton.isEnabled = true
@@ -96,9 +92,9 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     }
     
     @IBAction func LoadPressed(_ sender: UIButton) {
-//        self.ImageView1.image = self.images[0]
-//        self.ImageView2.image = self.images[1]
-//        self.ImageView3.image = self.images[2]
+        self.ImageView1.image = Test.images[0]
+        self.ImageView2.image = Test.images[1]
+        self.ImageView3.image = Test.images[2]
     }
     
 
@@ -178,8 +174,8 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
                         let geocodedCoordinate = self.getCoordinateFromAddress(placemarks: placemarks)
                         print(geocodedCoordinate)
                         computedHeading = GMSGeometryHeading(coordinate, geocodedCoordinate)
-                        print("heading....")
-                        print(computedHeading)
+                        //print("heading....")
+                        //print(computedHeading)
                         completion(computedHeading)
                     }
                 }
