@@ -28,19 +28,18 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     var mostRecent: Commute!
     var locations: NSOrderedSet?
     var numLocations: Int?
-    //var coordinates: [CLLocationCoordinate2D] = []
+    var coordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155),CLLocationCoordinate2D(latitude: 44.229302978844281, longitude: -76.490728775538614),CLLocationCoordinate2D(latitude: 44.230184864966596, longitude: -76.494257015241431)]
     //CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082),
     //,CLLocationCoordinate2D(latitude: 44.229375, longitude: -76.486359)
     // biosc:
     //CLLocationCoordinate2D(latitude: 44.226428, longitude: -76.491251)
     // 230 barrie st. : CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)
     
-    var coordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082),CLLocationCoordinate2D(latitude: 44.229375, longitude: -76.486359),CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)]
+//    var coordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082),CLLocationCoordinate2D(latitude: 44.229375, longitude: -76.486359),CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ContinueButton.isEnabled = false
-        //var computedHeading: CLLocationDirection = 0
         commutes = getCommutes()
         //let mostRecent = commutes.last
         //coordinates = getCoordinates(mostRecentCommute: commutes.last!)
@@ -57,15 +56,18 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
         Test.images = []
         Test.imageIdentifiers = []
         for coordinate in coordinates {
+            
+            // generate random coordinate
+            let randomCoordinate = self.getRandomCoordinate(longitude: coordinate.longitude, latitude: coordinate.latitude, radius: 500)
+            print("random coordinate: ", randomCoordinate)
     
             // increase delay on each iteration, so all views have the chance to be presented
             self.delayWithSeconds(delay) {
                 
                 // compute heading returns the proper heading for the pano, or 0 if there's an error in geocoding 
                 self.computeHeading(coordinate: coordinate) { (heading) in
-                    print("!!!!!!")
-                    print(heading)
-                    panoView.camera = GMSPanoramaCamera(heading: heading, pitch: -10, zoom: 1.5)
+                    print("heading: ",heading)
+                    panoView.camera = GMSPanoramaCamera(heading: heading, pitch: -10, zoom: 1.0)
                     panoView.moveNearCoordinate(coordinate)
                     // wait for view to load before taking a snapshot
                     self.delayWithSeconds(2) {
@@ -80,7 +82,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
                     }
                 }
             }
-            delay = delay + 2
+            delay = delay + 3
         }
         
     }
@@ -154,16 +156,13 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
         let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         var computedHeading: CLLocationDirection = 0
         // if there's an error in either reverse geocoding or forward geocoding, just use coordinate as is
-        // Get address of closest building
         self.geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
-            // Process Response
             if let error = error {
                 print("Unable to Reverse Geocode Location (\(error))")
-                //computedHeading = 0
             }
             else {
                 let address = self.getAddress(placemarks: placemarks)
-                print(address!)
+                print("address: ", address!)
                 // get coordinates from address by forward geocoding
                 self.geocoder.geocodeAddressString(address!) { (placemarks, error) in
                     if let error = error {
@@ -172,10 +171,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
                     }
                     else {
                         let geocodedCoordinate = self.getCoordinateFromAddress(placemarks: placemarks)
-                        print(geocodedCoordinate)
                         computedHeading = GMSGeometryHeading(coordinate, geocodedCoordinate)
-                        //print("heading....")
-                        //print(computedHeading)
                         completion(computedHeading)
                     }
                 }
@@ -192,12 +188,27 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     
     private func getCoordinateFromAddress(placemarks: [CLPlacemark]?) -> CLLocationCoordinate2D {
         var location: CLLocation?
-        //var coordinate2D: CLLocationCoordinate2D?
         location = placemarks?.first?.location
         let coordinate = location?.coordinate
-        //print("\(String(describing: coordinate?.latitude)), \(String(describing: coordinate?.longitude))")
         return CLLocationCoordinate2D(latitude: (coordinate?.latitude)!,longitude: (coordinate?.longitude)!)
     }
+    
+    // get random coordinate within a specified radius of a latitude and longitude
+    private func getRandomCoordinate(longitude: CLLocationDegrees,latitude: CLLocationDegrees,radius: Double) -> CLLocationCoordinate2D {
+        // convert radius to degrees
+        let newRadius = radius/111000
+        let u = drand48()
+        let v = drand48()
+        let w = newRadius * sqrt(u)
+        let t = 2 * Double.pi * v
+        let x = w * cos(t)
+        let y = w * sin(t)
+        let newX = x/cos((latitude / 180 * Double.pi))
+        let newLongitude = newX + longitude
+        let newLatitude = y + latitude
+        let randomCoordinate = CLLocationCoordinate2D(latitude: newLatitude,longitude: newLongitude)
+        return randomCoordinate
+}
     
 }
 
