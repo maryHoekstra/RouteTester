@@ -28,7 +28,8 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     var mostRecent: Commute!
     var locations: NSOrderedSet?
     var numLocations: Int?
-    var coordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)]
+    var coordinates: [CLLocationCoordinate2D] = []
+    //var coordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)]
     //CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082),
     //,CLLocationCoordinate2D(latitude: 44.229375, longitude: -76.486359)
     // biosc:
@@ -42,7 +43,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
         ContinueButton.isEnabled = false
         commutes = getCommutes()
         //let mostRecent = commutes.last
-        //coordinates = getCoordinates(mostRecentCommute: commutes.last!)
+        coordinates = getCoordinates(mostRecentCommute: commutes.last!)
         
         let panoView = GMSPanoramaView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
 

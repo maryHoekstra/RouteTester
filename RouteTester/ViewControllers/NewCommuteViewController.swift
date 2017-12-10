@@ -38,6 +38,7 @@ class NewCommuteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dataStackView.isHidden = true
+        stopButton.isHidden = true
         // request location usage from user
         locationManager.requestWhenInUseAuthorization()
     }
@@ -102,9 +103,22 @@ class NewCommuteViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
             self.stopCommute()
-            self.saveCommute()
-            // segue to commute details VC
-            self.performSegue(withIdentifier: .details, sender: nil)
+            ///
+            if self.locationList.count >= 10 {
+                self.saveCommute()
+                // segue to commute details VC
+                self.performSegue(withIdentifier: .details, sender: nil)
+            }
+            else {
+                let newAlertController = UIAlertController(title: "Error",
+                                                           message: "Only commutes longer than 1km can be saved.",
+                                                           preferredStyle: .alert)
+                newAlertController.addAction(UIAlertAction(title: "Okay", style: .destructive) { _ in
+                    _ = self.navigationController?.popToRootViewController(animated: true)
+                })
+                self.present(newAlertController, animated: true)
+            }
+            
         })
         alertController.addAction(UIAlertAction(title: "Discard", style: .destructive) { _ in
             self.stopCommute()
