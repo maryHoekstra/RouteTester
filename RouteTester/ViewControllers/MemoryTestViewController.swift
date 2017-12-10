@@ -28,7 +28,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     var mostRecent: Commute!
     var locations: NSOrderedSet?
     var numLocations: Int?
-    var coordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155),CLLocationCoordinate2D(latitude: 44.229302978844281, longitude: -76.490728775538614),CLLocationCoordinate2D(latitude: 44.230184864966596, longitude: -76.494257015241431)]
+    var coordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)]
     //CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082),
     //,CLLocationCoordinate2D(latitude: 44.229375, longitude: -76.486359)
     // biosc:
@@ -50,16 +50,27 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
         panoView.setAllGesturesEnabled(false)
         self.ImageView.addSubview(panoView)
 
-        var delay: Double = 0
         // for each coordinate, move near coordinate
         // clear images array in Test struct in case user keeps app open
         Test.images = []
         Test.imageIdentifiers = []
-        for coordinate in coordinates {
-            
-            // generate random coordinate
-            let randomCoordinate = self.getRandomCoordinate(longitude: coordinate.longitude, latitude: coordinate.latitude, radius: 500)
+        
+        // generate lures and add them to coordinates array
+        let seedCoordinate = coordinates.first!
+        // set random seed
+        let time = UInt32(NSDate().timeIntervalSinceReferenceDate)
+        srand48(Int(time))
+        for _ in 0 ..< coordinates.count {
+            let randomCoordinate = self.getRandomCoordinate(longitude: seedCoordinate.longitude, latitude: seedCoordinate.latitude, radius: 500)
             print("random coordinate: ", randomCoordinate)
+            coordinates.append(randomCoordinate)
+        }
+
+        // shuffle array of coordinates so that images will be in random order
+        coordinates.shuffle()
+        
+        var delay: Double = 0
+        for coordinate in coordinates {
     
             // increase delay on each iteration, so all views have the chance to be presented
             self.delayWithSeconds(delay) {
@@ -69,8 +80,9 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
                     print("heading: ",heading)
                     panoView.camera = GMSPanoramaCamera(heading: heading, pitch: -10, zoom: 1.0)
                     panoView.moveNearCoordinate(coordinate)
+                    panoView.streetNamesHidden = true
                     // wait for view to load before taking a snapshot
-                    self.delayWithSeconds(2) {
+                    self.delayWithSeconds(4) {
                         let streetViewImage = self.ImageView.snapshot
                         self.TestView.image = streetViewImage
                         Test.images.append(streetViewImage!)
@@ -82,7 +94,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
                     }
                 }
             }
-            delay = delay + 3
+            delay = delay + 4
         }
         
     }
@@ -248,5 +260,19 @@ extension CLPlacemark {
         return nil
     }
 
+}
+
+extension MutableCollection {
+    /// Shuffles the contents of this collection.
+    mutating func shuffle() {
+        let c = count
+        guard c > 1 else { return }
+        
+        for (firstUnshuffled, unshuffledCount) in zip(indices, stride(from: c, to: 1, by: -1)) {
+            let d: IndexDistance = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
+            let i = index(firstUnshuffled, offsetBy: d)
+            swapAt(firstUnshuffled, i)
+        }
+    }
 }
 
