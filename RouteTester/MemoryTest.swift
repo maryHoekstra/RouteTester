@@ -42,12 +42,10 @@ public var MemoryTest: ORKOrderedTask {
             ORKImageChoice(normalImage: Test.images[i], selectedImage: nil, text: nil, value: imageText as NSCoding & NSCopying & NSObjectProtocol)
         ]
     
-        // A first field, for displaying your image.
-        //let formItem01Text = NSLocalizedString("Your Image", comment: "")
+        // a first field, for displaying the image
         let formItem01 = ORKFormItem(identifier: Test.imageIdentifiers[i], text: nil, answerFormat: ORKAnswerFormat.choiceAnswerFormat(with: imageChoices))
     
-        // A second field, for the scale.
-        //let formItem02Text = NSLocalizedString("Your Scale", comment: "")
+        // a second field, for the scale
         let formItem02 = ORKFormItem(identifier: "response" + String(i), text: nil, answerFormat: ORKAnswerFormat.scale(withMaximumValue: 5, minimumValue: 1, defaultValue: 0, step: 1, vertical: false, maximumValueDescription: nil, minimumValueDescription: nil))
     
         sampleStep.formItems = [

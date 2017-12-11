@@ -28,7 +28,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     var mostRecent: Commute!
     var locations: NSOrderedSet?
     var numLocations: Int?
-    var allCoordinates: [CLLocationCoordinate2D] = []
+    //var allCoordinates: [CLLocationCoordinate2D] = []
     var coordinates: [CLLocationCoordinate2D] = []
     //var coordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)]
     //CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082),
@@ -37,13 +37,13 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     //CLLocationCoordinate2D(latitude: 44.226428, longitude: -76.491251)
     // 230 barrie st. : CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)
     
-    //var allCoordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082),CLLocationCoordinate2D(latitude: 44.229375, longitude: -76.486359),CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)]
+    var allCoordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082),CLLocationCoordinate2D(latitude: 44.229375, longitude: -76.486359),CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ContinueButton.isEnabled = false
-        commutes = getCommutes()
-        allCoordinates = getCoordinates(mostRecentCommute: commutes.last!)
+        //commutes = getCommutes()
+        //allCoordinates = getCoordinates(mostRecentCommute: commutes.last!)
         coordinates = allCoordinates
         
         // take random subset of coordinates
@@ -88,7 +88,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
                     panoView.moveNearCoordinate(coordinate)
                     panoView.streetNamesHidden = true
                     // wait for view to load before taking a snapshot
-                    self.delayWithSeconds(4) {
+                    self.delayWithSeconds(5) {
                         let streetViewImage = self.ImageView.snapshot
                         self.TestView.image = streetViewImage
                         Test.images.append(streetViewImage!)
@@ -100,7 +100,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
                     }
                 }
             }
-            delay = delay + 4
+            delay = delay + 5
         }
         
     }

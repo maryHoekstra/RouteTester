@@ -49,6 +49,7 @@
 		4D808D911FC3AB4700118B0F /* ConsentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D808D901FC3AB4700118B0F /* ConsentDocument.swift */; };
 		4D808D931FC3AD2100118B0F /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D808D921FC3AD2100118B0F /* ConsentTask.swift */; };
 		4D808D951FC3CBA000118B0F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D808D941FC3CBA000118B0F /* OnboardingViewController.swift */; };
+		4D922A981FDF228900424EB9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D922A971FDF228900424EB9 /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		4D808D901FC3AB4700118B0F /* ConsentDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
 		4D808D921FC3AD2100118B0F /* ConsentTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
 		4D808D941FC3CBA000118B0F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		4D922A971FDF228900424EB9 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		4DB199CF1FCA386E006A563B /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = "../../TestProject/ResearchKit-master/ResearchKit.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -239,6 +241,7 @@
 				4D808D941FC3CBA000118B0F /* OnboardingViewController.swift */,
 				4D11B6DB1FCAF56100991802 /* MemoryTestViewController.swift */,
 				4D11B6E01FCB010900991802 /* DemographicsViewController.swift */,
+				4D922A971FDF228900424EB9 /* AboutViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				4D11B6DE1FCAFED900991802 /* NavigationReport.swift in Sources */,
 				4D808D931FC3AD2100118B0F /* ConsentTask.swift in Sources */,
 				4D808D861FB7C7D800118B0F /* StoryboardSupport.swift in Sources */,
+				4D922A981FDF228900424EB9 /* AboutViewController.swift in Sources */,
 				4D11B6E31FCB021100991802 /* DemographicsSurvey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,6 +560,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = RouteTester/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mary.hoekstra.RouteTester;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -576,6 +581,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = RouteTester/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mary.hoekstra.RouteTester;
 				PRODUCT_NAME = "$(TARGET_NAME)";

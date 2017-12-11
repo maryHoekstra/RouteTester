@@ -53,8 +53,6 @@ class NewCommuteViewController: UIViewController {
     
     private func startCommute() {
         //launchPromptStackView.isHidden = true
-    
-        
         dataStackView.isHidden = false
         startButton.isHidden = true
         stopButton.isHidden = false
@@ -104,14 +102,16 @@ class NewCommuteViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
             self.stopCommute()
+            let numLocations = self.locationList.count
+            print("number of locations: ", numLocations)
             ///
-            if self.locationList.count >= 10 {
+            if numLocations >= 0 {
                 self.saveCommute()
                 // segue to commute details VC
                 self.performSegue(withIdentifier: .details, sender: nil)
             }
             else {
-                let newAlertController = UIAlertController(title: "Error",
+                let newAlertController = UIAlertController(title: "Error!",
                                                            message: "Only commutes longer than 1km can be saved.",
                                                            preferredStyle: .alert)
                 newAlertController.addAction(UIAlertAction(title: "Okay", style: .destructive) { _ in
@@ -132,9 +132,8 @@ class NewCommuteViewController: UIViewController {
     private func startLocationUpdates() {
         // set NewCommuteViewController as delegate
         locationManager.delegate = self
-        //locationManager.activityType = .fitness
         // minimum distance device must move before location is updated
-        locationManager.distanceFilter = 100
+        locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
     }
     
