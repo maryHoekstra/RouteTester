@@ -28,6 +28,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     var mostRecent: Commute!
     var locations: NSOrderedSet?
     var numLocations: Int?
+    var allCoordinates: [CLLocationCoordinate2D] = []
     var coordinates: [CLLocationCoordinate2D] = []
     //var coordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)]
     //CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082),
@@ -36,14 +37,18 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     //CLLocationCoordinate2D(latitude: 44.226428, longitude: -76.491251)
     // 230 barrie st. : CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)
     
-//    var coordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082),CLLocationCoordinate2D(latitude: 44.229375, longitude: -76.486359),CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)]
+    //var allCoordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082),CLLocationCoordinate2D(latitude: 44.229375, longitude: -76.486359),CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ContinueButton.isEnabled = false
         commutes = getCommutes()
-        //let mostRecent = commutes.last
-        coordinates = getCoordinates(mostRecentCommute: commutes.last!)
+        allCoordinates = getCoordinates(mostRecentCommute: commutes.last!)
+        coordinates = allCoordinates
+        
+        // take random subset of coordinates
+        allCoordinates.shuffle()
+        coordinates = Array(allCoordinates.prefix(3))
         
         let panoView = GMSPanoramaView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
 
@@ -79,7 +84,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
                 // compute heading returns the proper heading for the pano, or 0 if there's an error in geocoding 
                 self.computeHeading(coordinate: coordinate) { (heading) in
                     print("heading: ",heading)
-                    panoView.camera = GMSPanoramaCamera(heading: heading, pitch: -10, zoom: 1.0)
+                    panoView.camera = GMSPanoramaCamera(heading: heading, pitch: -10, zoom: 1.5)
                     panoView.moveNearCoordinate(coordinate)
                     panoView.streetNamesHidden = true
                     // wait for view to load before taking a snapshot
