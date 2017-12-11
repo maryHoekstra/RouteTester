@@ -11,6 +11,8 @@ import ResearchKit
 
 class OnboardingViewController: UIViewController, ORKTaskViewControllerDelegate {
     
+    @IBOutlet weak var joinStudy: ORKBorderedButton!
+    
     // present consent task when join button is pressed
     @IBAction func Join(_ sender: UIButton) {
         let ConsentTaskViewController = ORKTaskViewController(task: ConsentTask, taskRun: nil)

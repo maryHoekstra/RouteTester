@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import ResearchKit
 
 // view that allows users to log a new commute
 class NewCommuteViewController: UIViewController {
@@ -16,8 +17,8 @@ class NewCommuteViewController: UIViewController {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
 
-    @IBOutlet weak var startButton: UIButton!
-    @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var startButton: ORKBorderedButton!
+    @IBOutlet weak var stopButton: ORKBorderedButton!
     
 //    @IBOutlet weak var launchPromptStackView: UIStackView!
 

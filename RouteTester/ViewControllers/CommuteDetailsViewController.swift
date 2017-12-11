@@ -17,6 +17,8 @@ class CommuteDetailsViewController: UIViewController, ORKTaskViewControllerDeleg
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
+    @IBOutlet weak var continueButton: ORKContinueButton!
+    
     var commute: Commute!
 
     override func viewDidLoad() {

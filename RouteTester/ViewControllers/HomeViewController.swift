@@ -12,12 +12,15 @@ import CoreData
 
 class HomeViewController: UIViewController, ORKTaskViewControllerDelegate {
     
+    @IBOutlet weak var TakeTestButton: ORKBorderedButton!
+    @IBOutlet weak var LogCommuteButton: ORKBorderedButton!
     var commutes: [Commute]!
     var mostRecent: Commute!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,5 +73,7 @@ class HomeViewController: UIViewController, ORKTaskViewControllerDelegate {
     }
     
 }
+
+
 
 

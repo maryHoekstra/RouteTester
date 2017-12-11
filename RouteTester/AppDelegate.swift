@@ -40,9 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = viewController
         self.window?.makeKeyAndVisible()
         
-        
-//        let locationManager = LocationManager.shared
-//        locationManager.requestWhenInUseAuthorization()
         return true
     }
 
