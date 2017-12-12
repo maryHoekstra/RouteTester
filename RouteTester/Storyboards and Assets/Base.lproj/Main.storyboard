@@ -147,10 +147,6 @@
                                     <action selector="Continue:" destination="SDE-Q5-Y5p" eventType="touchUpInside" id="hSg-VX-Wru"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DTP-D3-eqe">
-                                <rect key="frame" x="60" y="20" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yvp-iJ-6mA">
                                 <rect key="frame" x="60" y="228" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -173,6 +169,10 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d0b-QE-6AP" userLabel="ImageView2">
                                 <rect key="frame" x="124" y="448" width="72" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DTP-D3-eqe">
+                                <rect key="frame" x="60" y="20" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -275,8 +275,8 @@
                                     <action selector="start:" destination="im6-Xg-9To" eventType="touchUpInside" id="hrt-Qt-dfn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Log a Commute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrE-rC-QrL">
-                                <rect key="frame" x="90" y="94" width="140" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log a Commute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrE-rC-QrL">
+                                <rect key="frame" x="90" y="94" width="138" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -287,6 +287,7 @@
                             <constraint firstItem="jrE-rC-QrL" firstAttribute="top" secondItem="XPu-wZ-9vb" secondAttribute="top" constant="30" id="XMv-dZ-sLG"/>
                             <constraint firstItem="XPu-wZ-9vb" firstAttribute="trailing" secondItem="CCa-Nf-1mf" secondAttribute="trailing" constant="10" id="YzG-fg-mye"/>
                             <constraint firstItem="CCa-Nf-1mf" firstAttribute="leading" secondItem="UJr-Xh-xrl" secondAttribute="leadingMargin" id="bdo-cZ-bYX"/>
+                            <constraint firstItem="jrE-rC-QrL" firstAttribute="leading" secondItem="XPu-wZ-9vb" secondAttribute="leading" constant="90" id="eH1-ES-oVv"/>
                             <constraint firstItem="XPu-wZ-9vb" firstAttribute="bottom" secondItem="CCa-Nf-1mf" secondAttribute="bottom" constant="368" id="olQ-2e-0Tg"/>
                             <constraint firstItem="CCa-Nf-1mf" firstAttribute="top" secondItem="XPu-wZ-9vb" secondAttribute="top" constant="87" id="sRQ-Ej-LIu"/>
                         </constraints>

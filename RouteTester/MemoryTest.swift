@@ -11,17 +11,7 @@ import ResearchKit
 // Task to present Memory Test
 public var MemoryTest: ORKOrderedTask {
     
-    
     var steps = [ORKStep]()
-    
-    // generate identifiers based on number of images
-    //var testImages: [UIImage] = []
-    // populate image array
-//    testImages += [UIImage(named: "Cat1")!,UIImage(named: "Cat2")!,UIImage(named: "Cat3")!]
-    //var stepIdentifiers: [String] = ["Step1", "Step2", "Step3"]
-    //var imageIdentifiers: [String] = ["Img1","Img2","Img3"]
-    //var responseIdentifiers: [String] = ["Response1","Response2","Response3"]
-    
     
     // instructions
     let instructionStep = ORKInstructionStep(identifier: "IntroStep")
@@ -43,14 +33,28 @@ public var MemoryTest: ORKOrderedTask {
         ]
     
         // a first field, for displaying the image
-        let formItem01 = ORKFormItem(identifier: Test.imageIdentifiers[i], text: nil, answerFormat: ORKAnswerFormat.choiceAnswerFormat(with: imageChoices))
+        let formItem01 = ORKFormItem(identifier: Test.imageIdentifiers[i], text: "Rate your memory of this scene:", answerFormat: ORKAnswerFormat.choiceAnswerFormat(with: imageChoices))
     
         // a second field, for the scale
-        let formItem02 = ORKFormItem(identifier: "response" + String(i), text: nil, answerFormat: ORKAnswerFormat.scale(withMaximumValue: 5, minimumValue: 1, defaultValue: 0, step: 1, vertical: false, maximumValueDescription: nil, minimumValueDescription: nil))
+        let formItem02 = ORKFormItem(identifier: "scaleResponse" + String(i), text: nil, answerFormat: ORKAnswerFormat.scale(withMaximumValue: 5, minimumValue: 1, defaultValue: 0, step: 1, vertical: false, maximumValueDescription: nil, minimumValueDescription: nil))
     
+        // a third field for rating the success of the trial
+        let iconTuples = [
+            (UIImage(named: "ImageDidNotLoad")!, "Image did not load"),
+            (UIImage(named: "NotAHouse")!, "Not a building"),
+            (UIImage(named: "AllGood")!, "Clear image of building"),
+        ]
+        let iconChoices : [ORKImageChoice] = iconTuples.map {
+            return ORKImageChoice(normalImage: $0.0, selectedImage: nil, text: $0.1, value: $0.1 as NSCoding & NSCopying & NSObjectProtocol)
+        }
+        let iconAnswerFormat: ORKImageChoiceAnswerFormat = ORKAnswerFormat.choiceAnswerFormat(with: iconChoices)
+        let formItem03 = ORKFormItem(identifier: "iconResponse" + String(i), text: "Rate the quality of the image:", answerFormat: iconAnswerFormat)
+        
+        
         sampleStep.formItems = [
             formItem01,
-            formItem02
+            formItem02,
+            formItem03
         ]
         steps += [sampleStep]
     }
