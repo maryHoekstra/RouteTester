@@ -23,6 +23,7 @@ class NewCommuteViewController: UIViewController {
 //    @IBOutlet weak var launchPromptStackView: UIStackView!
 
     private var commute: Commute?
+    private let minLocations = 2
     
     // object to start and stop location services
     private let locationManager = LocationManager.shared
@@ -105,7 +106,7 @@ class NewCommuteViewController: UIViewController {
             let numLocations = self.locationList.count
             print("number of locations: ", numLocations)
             ///
-            if numLocations >= 0 {
+            if numLocations >= self.minLocations {
                 self.saveCommute()
                 // segue to commute details VC
                 self.performSegue(withIdentifier: .details, sender: nil)

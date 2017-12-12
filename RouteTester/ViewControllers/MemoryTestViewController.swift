@@ -29,26 +29,26 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     var locations: NSOrderedSet?
     var numLocations: Int?
     //var allCoordinates: [CLLocationCoordinate2D] = []
-    var coordinates: [CLLocationCoordinate2D] = []
-    //var coordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)]
+    //var coordinates: [CLLocationCoordinate2D] = []
+    var coordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)]
     //CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082),
     //,CLLocationCoordinate2D(latitude: 44.229375, longitude: -76.486359)
     // biosc:
     //CLLocationCoordinate2D(latitude: 44.226428, longitude: -76.491251)
     // 230 barrie st. : CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)
     
-    var allCoordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082),CLLocationCoordinate2D(latitude: 44.229375, longitude: -76.486359),CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)]
+//    var allCoordinates: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(latitude: 44.230251, longitude: -76.492082),CLLocationCoordinate2D(latitude: 44.229375, longitude: -76.486359),CLLocationCoordinate2D(latitude: 44.229781, longitude: -76.491155)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ContinueButton.isEnabled = false
-        //commutes = getCommutes()
-        //allCoordinates = getCoordinates(mostRecentCommute: commutes.last!)
-        coordinates = allCoordinates
-        
-        // take random subset of coordinates
-        allCoordinates.shuffle()
-        coordinates = Array(allCoordinates.prefix(3))
+//        commutes = getCommutes()
+//        allCoordinates = getCoordinates(mostRecentCommute: commutes.last!)
+//        coordinates = allCoordinates
+//
+//        // take random subset of coordinates
+//        allCoordinates.shuffle()
+//        coordinates = Array(allCoordinates.prefix(3))
         
         let panoView = GMSPanoramaView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
 
@@ -88,7 +88,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
                     panoView.moveNearCoordinate(coordinate)
                     panoView.streetNamesHidden = true
                     // wait for view to load before taking a snapshot
-                    self.delayWithSeconds(5) {
+                    self.delayWithSeconds(2) {
                         let streetViewImage = self.ImageView.snapshot
                         self.TestView.image = streetViewImage
                         Test.images.append(streetViewImage!)
@@ -100,7 +100,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
                     }
                 }
             }
-            delay = delay + 5
+            delay = delay + 2
         }
         
     }
@@ -134,6 +134,31 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
         taskViewController.dismiss(animated: true, completion: {
             // mark commute as tested
             //self.commutes.last?.tested = true
+            
+            // process results
+            // if 2 or more images didn't load properly, display message increase delay in user defaults
+            var counter: Int = 0
+            
+            if let taskResults = taskViewController.result.results {
+                for stepResult in taskResults as! [ORKStepResult] {
+                    //print("step result: ", stepResult)
+                    if stepResult.identifier.hasPrefix("step") {
+                        if let results = stepResult.results {
+                            for result in results {
+                                if result.identifier.hasPrefix("iconResponse") {
+                                    // collect result.answer
+                                    let result = result as! ORKChoiceQuestionResult
+                                    let answer = result.answer as! NSArray
+                                    print(answer[0])
+                                }
+                            }
+                        }
+                    }
+                    counter = counter + 1
+                
+            }
+            }
+            
             // navigate back to home screen
             let svc = self.storyboard!.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
             self.present(svc, animated: true, completion: nil)
