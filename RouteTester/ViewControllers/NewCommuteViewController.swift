@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 import CoreLocation
 import ResearchKit
 
@@ -16,6 +17,8 @@ class NewCommuteViewController: UIViewController {
     @IBOutlet weak var dataStackView: UIStackView!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
+    
 
     @IBOutlet weak var startButton: ORKBorderedButton!
     @IBOutlet weak var stopButton: ORKBorderedButton!
@@ -37,7 +40,8 @@ class NewCommuteViewController: UIViewController {
     // hide commute details before start is pressed
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataStackView.isHidden = true
+        mapView.delegate = self
+        dataStackView.isHidden = false
         stopButton.isHidden = true
         // request location usage from user
         locationManager.requestWhenInUseAuthorization()
@@ -188,10 +192,27 @@ extension NewCommuteViewController: CLLocationManagerDelegate {
             if let lastLocation = locationList.last {
                 let delta = newLocation.distance(from: lastLocation)
                 distance = distance + Measurement(value: delta, unit: UnitLength.meters)
+                let coordinates = [lastLocation.coordinate, newLocation.coordinate]
+                mapView.add(MKPolyline(coordinates: coordinates, count: 2))
+                let region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 500, 500)
+                mapView.setRegion(region, animated: true)
+                
             }
             
             locationList.append(newLocation)
         }
+    }
+}
+
+extension NewCommuteViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        guard let polyline = overlay as? MKPolyline else {
+            return MKOverlayRenderer(overlay: overlay)
+        }
+        let renderer = MKPolylineRenderer(polyline: polyline)
+        renderer.strokeColor = .black
+        renderer.lineWidth = 3
+        return renderer
     }
 }
 

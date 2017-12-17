@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -243,59 +242,77 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CCa-Nf-1mf" userLabel="Data Stack View">
-                                <rect key="frame" x="16" y="151" width="294" height="49"/>
+                                <rect key="frame" x="10" y="357" width="310" height="49"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuB-ru-ta6">
-                                        <rect key="frame" x="0.0" y="0.0" width="72" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuB-ru-ta6">
+                                        <rect key="frame" x="0.0" y="0.0" width="310" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0I-QB-Ngb">
-                                        <rect key="frame" x="0.0" y="28.5" width="47" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Time: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0I-QB-Ngb">
+                                        <rect key="frame" x="0.0" y="28.5" width="310" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="TuB-ru-ta6" secondAttribute="trailing" id="4DB-Gi-Wy3"/>
+                                    <constraint firstAttribute="trailing" secondItem="m0I-QB-Ngb" secondAttribute="trailing" id="9jZ-6p-PHI"/>
+                                    <constraint firstItem="m0I-QB-Ngb" firstAttribute="leading" secondItem="CCa-Nf-1mf" secondAttribute="leading" id="J2Q-aU-wn4"/>
+                                    <constraint firstItem="TuB-ru-ta6" firstAttribute="leading" secondItem="CCa-Nf-1mf" secondAttribute="leading" id="oYo-3K-uDP"/>
+                                </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BS2-Vr-jBP" customClass="ORKBorderedButton">
-                                <rect key="frame" x="138" y="384" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BS2-Vr-jBP" customClass="ORKBorderedButton">
+                                <rect key="frame" x="144" y="446" width="32" height="30"/>
                                 <state key="normal" title="Stop"/>
                                 <connections>
                                     <action selector="stopTapped:" destination="im6-Xg-9To" eventType="touchUpInside" id="O3R-IR-u4Q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3H3-s1-AuB" customClass="ORKBorderedButton">
-                                <rect key="frame" x="136" y="384" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xbs-xp-Nkw">
+                                <rect key="frame" x="0.0" y="137" width="320" height="189"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="189" id="wne-sY-Z3N"/>
+                                </constraints>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log a Commute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrE-rC-QrL">
+                                <rect key="frame" x="96" y="94" width="138" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3H3-s1-AuB" customClass="ORKBorderedButton">
+                                <rect key="frame" x="143" y="446" width="34" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="start:" destination="im6-Xg-9To" eventType="touchUpInside" id="hrt-Qt-dfn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log a Commute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrE-rC-QrL">
-                                <rect key="frame" x="90" y="94" width="138" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jrE-rC-QrL" firstAttribute="top" secondItem="XPu-wZ-9vb" secondAttribute="top" constant="30" id="XMv-dZ-sLG"/>
-                            <constraint firstItem="XPu-wZ-9vb" firstAttribute="trailing" secondItem="CCa-Nf-1mf" secondAttribute="trailing" constant="10" id="YzG-fg-mye"/>
-                            <constraint firstItem="CCa-Nf-1mf" firstAttribute="leading" secondItem="UJr-Xh-xrl" secondAttribute="leadingMargin" id="bdo-cZ-bYX"/>
-                            <constraint firstItem="jrE-rC-QrL" firstAttribute="leading" secondItem="XPu-wZ-9vb" secondAttribute="leading" constant="90" id="eH1-ES-oVv"/>
-                            <constraint firstItem="XPu-wZ-9vb" firstAttribute="bottom" secondItem="CCa-Nf-1mf" secondAttribute="bottom" constant="368" id="olQ-2e-0Tg"/>
-                            <constraint firstItem="CCa-Nf-1mf" firstAttribute="top" secondItem="XPu-wZ-9vb" secondAttribute="top" constant="87" id="sRQ-Ej-LIu"/>
+                            <constraint firstItem="BS2-Vr-jBP" firstAttribute="centerX" secondItem="xbs-xp-Nkw" secondAttribute="centerX" id="4gG-g1-tvi"/>
+                            <constraint firstItem="jrE-rC-QrL" firstAttribute="centerX" secondItem="CCa-Nf-1mf" secondAttribute="centerX" id="6xf-Wd-Svu"/>
+                            <constraint firstItem="3H3-s1-AuB" firstAttribute="centerX" secondItem="BS2-Vr-jBP" secondAttribute="centerX" id="H1x-ry-Xql"/>
+                            <constraint firstAttribute="bottom" secondItem="CCa-Nf-1mf" secondAttribute="bottom" constant="162" id="Ix5-NX-IU8"/>
+                            <constraint firstItem="xbs-xp-Nkw" firstAttribute="leading" secondItem="UJr-Xh-xrl" secondAttribute="leading" id="OzP-hZ-3di"/>
+                            <constraint firstItem="BS2-Vr-jBP" firstAttribute="top" secondItem="CCa-Nf-1mf" secondAttribute="bottom" constant="40" id="QOI-GK-OMS"/>
+                            <constraint firstItem="CCa-Nf-1mf" firstAttribute="leading" secondItem="XPu-wZ-9vb" secondAttribute="leading" constant="10" id="ZcG-07-feW"/>
+                            <constraint firstItem="CCa-Nf-1mf" firstAttribute="top" secondItem="UJr-Xh-xrl" secondAttribute="top" constant="357" id="au6-Ft-kGU"/>
+                            <constraint firstItem="3H3-s1-AuB" firstAttribute="baseline" secondItem="BS2-Vr-jBP" secondAttribute="baseline" id="cER-xC-vDh"/>
+                            <constraint firstItem="XPu-wZ-9vb" firstAttribute="trailing" secondItem="CCa-Nf-1mf" secondAttribute="trailing" id="lYp-my-Q1r"/>
+                            <constraint firstItem="xbs-xp-Nkw" firstAttribute="top" secondItem="jrE-rC-QrL" secondAttribute="bottom" constant="19" id="x6v-mz-Ex7"/>
+                            <constraint firstItem="CCa-Nf-1mf" firstAttribute="top" secondItem="xbs-xp-Nkw" secondAttribute="bottom" constant="31" id="xOU-s1-kIH"/>
+                            <constraint firstItem="CCa-Nf-1mf" firstAttribute="trailing" secondItem="xbs-xp-Nkw" secondAttribute="trailing" id="z9N-q2-Brz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XPu-wZ-9vb"/>
                     </view>
                     <connections>
                         <outlet property="dataStackView" destination="CCa-Nf-1mf" id="InZ-d9-QO8"/>
                         <outlet property="distanceLabel" destination="TuB-ru-ta6" id="tHT-C1-JBT"/>
+                        <outlet property="mapView" destination="xbs-xp-Nkw" id="wgM-Fd-vxC"/>
                         <outlet property="startButton" destination="3H3-s1-AuB" id="ozK-P2-r69"/>
                         <outlet property="stopButton" destination="BS2-Vr-jBP" id="MRL-Y9-C0T"/>
                         <outlet property="timeLabel" destination="m0I-QB-Ngb" id="8fm-XY-Mry"/>
