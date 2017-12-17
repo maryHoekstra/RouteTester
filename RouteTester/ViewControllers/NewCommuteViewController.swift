@@ -19,8 +19,6 @@ class NewCommuteViewController: UIViewController {
 
     @IBOutlet weak var startButton: ORKBorderedButton!
     @IBOutlet weak var stopButton: ORKBorderedButton!
-    
-//    @IBOutlet weak var launchPromptStackView: UIStackView!
 
     private var commute: Commute?
     private let minLocations = 2
@@ -115,7 +113,7 @@ class NewCommuteViewController: UIViewController {
                 let newAlertController = UIAlertController(title: "Error!",
                                                            message: "Only commutes longer than 1km can be saved.",
                                                            preferredStyle: .alert)
-                newAlertController.addAction(UIAlertAction(title: "Okay", style: .destructive) { _ in
+                newAlertController.addAction(UIAlertAction(title: "OK", style: .destructive) { _ in
                     _ = self.navigationController?.popToRootViewController(animated: true)
                 })
                 self.present(newAlertController, animated: true)
@@ -134,7 +132,8 @@ class NewCommuteViewController: UIViewController {
         // set NewCommuteViewController as delegate
         locationManager.delegate = self
         // minimum distance device must move before location is updated
-        locationManager.distanceFilter = 50
+        locationManager.activityType = .fitness
+        locationManager.distanceFilter = 10
         locationManager.startUpdatingLocation()
     }
     
