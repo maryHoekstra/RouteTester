@@ -17,10 +17,13 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     lazy var geocoder = CLGeocoder()
     
     @IBOutlet weak var ImageView: UIImageView!
-    @IBOutlet weak var ImageView1: UIImageView!
-    @IBOutlet weak var ImageView2: UIImageView!
-    @IBOutlet weak var ImageView3: UIImageView!
     @IBOutlet weak var TestView: UIImageView!
+    
+    @IBOutlet weak var whiteView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var testLoaded: UIImageView!
+    @IBOutlet weak var testLoadingLabel: UILabel!
+    
     
     @IBOutlet weak var ContinueButton: UIButton!
     
@@ -42,6 +45,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         ContinueButton.isEnabled = false
+        testLoaded.isHidden = true
 //        commutes = getCommutes()
 //        allCoordinates = getCoordinates(mostRecentCommute: commutes.last!)
 //        coordinates = allCoordinates
@@ -77,6 +81,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
         
         var delay: Double = 0
         for coordinate in coordinates {
+            self.activityIndicator.startAnimating()
     
             // increase delay on each iteration, so all views have the chance to be presented
             self.delayWithSeconds(delay) {
@@ -88,7 +93,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
                     panoView.moveNearCoordinate(coordinate)
                     panoView.streetNamesHidden = true
                     // wait for view to load before taking a snapshot
-                    self.delayWithSeconds(2) {
+                    self.delayWithSeconds(3) {
                         let streetViewImage = self.ImageView.snapshot
                         self.TestView.image = streetViewImage
                         Test.images.append(streetViewImage!)
@@ -96,11 +101,15 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
                         if Test.images.count == self.coordinates.count {
                             //make continue button available
                             self.ContinueButton.isEnabled = true
+                            self.activityIndicator.isHidden = true
+                            self.testLoaded.isHidden = false
+                            self.testLoadingLabel.text = "Your test is ready!"
+                           
                         }
                     }
                 }
             }
-            delay = delay + 2
+            delay = delay + 3
         }
         
     }
@@ -109,12 +118,6 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             completion()
         }
-    }
-    
-    @IBAction func LoadPressed(_ sender: UIButton) {
-        self.ImageView1.image = Test.images[0]
-        self.ImageView2.image = Test.images[1]
-        self.ImageView3.image = Test.images[2]
     }
     
 
