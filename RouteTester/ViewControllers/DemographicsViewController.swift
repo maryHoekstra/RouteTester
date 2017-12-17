@@ -12,7 +12,7 @@ import ResearchKit
 // Task to present demographics survey
 class DemographicsViewController: UIViewController, ORKTaskViewControllerDelegate {
     
-    @IBOutlet weak var continueButton: ORKContinueButton!
+    @IBOutlet weak var continueButton: BorderedButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

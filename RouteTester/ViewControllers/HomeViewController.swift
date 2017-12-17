@@ -12,8 +12,11 @@ import CoreData
 
 class HomeViewController: UIViewController, ORKTaskViewControllerDelegate {
     
-    @IBOutlet weak var TakeTestButton: ORKBorderedButton!
-    @IBOutlet weak var LogCommuteButton: ORKBorderedButton!
+    //@IBOutlet weak var TakeTestButton: ORKBorderedButton!
+    //@IBOutlet weak var LogCommuteButton: ORKBorderedButton!
+    @IBOutlet weak var logCommuteButton: BorderedButton!
+    
+    @IBOutlet weak var takeTestButton: BorderedButton!
     var commutes: [Commute]!
     var mostRecent: Commute!
     

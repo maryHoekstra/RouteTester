@@ -25,7 +25,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     @IBOutlet weak var testLoadingLabel: UILabel!
     
     
-    @IBOutlet weak var ContinueButton: UIButton!
+    @IBOutlet weak var continueButton: BorderedButton!
     
     var commutes: [Commute]!
     var mostRecent: Commute!
@@ -44,7 +44,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ContinueButton.isEnabled = false
+        continueButton.isEnabled = false
         testLoaded.isHidden = true
 //        commutes = getCommutes()
 //        allCoordinates = getCoordinates(mostRecentCommute: commutes.last!)
@@ -100,7 +100,7 @@ class MemoryTestViewController: UIViewController, ORKTaskViewControllerDelegate,
                         Test.imageIdentifiers.append(String(describing: coordinate))
                         if Test.images.count == self.coordinates.count {
                             //make continue button available
-                            self.ContinueButton.isEnabled = true
+                            self.continueButton.isEnabled = true
                             self.activityIndicator.isHidden = true
                             self.testLoaded.isHidden = false
                             self.testLoadingLabel.text = "Your test is ready!"

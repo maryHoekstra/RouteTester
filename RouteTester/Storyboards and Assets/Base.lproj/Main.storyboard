@@ -49,21 +49,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZp-5Y-Hto" customClass="ORKBorderedButton">
-                                <rect key="frame" x="98" y="329" width="124" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZp-5Y-Hto" customClass="BorderedButton" customModule="RouteTester" customModuleProvider="target">
+                                <rect key="frame" x="95" y="337" width="130" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Log Commute"/>
                                 <connections>
                                     <segue destination="im6-Xg-9To" kind="show" id="OfV-iU-K6l"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfs-As-aF6" customClass="ORKBorderedButton">
-                                <rect key="frame" x="111" y="381" width="98" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Take Test"/>
-                                <connections>
-                                    <action selector="TakeTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RYp-T9-eJA"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RouteTester" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkS-kK-crv">
@@ -81,6 +73,14 @@
                                     <segue destination="aQv-Pb-p0Z" kind="show" id="E1u-Hf-8Pe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfs-As-aF6" customClass="BorderedButton" customModule="RouteTester" customModuleProvider="target">
+                                <rect key="frame" x="95" y="381" width="130" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Take Test"/>
+                                <connections>
+                                    <action selector="TakeTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RYp-T9-eJA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -89,6 +89,8 @@
                     <connections>
                         <outlet property="LogCommuteButton" destination="SZp-5Y-Hto" id="a0l-Go-fWB"/>
                         <outlet property="TakeTestButton" destination="Lfs-As-aF6" id="1d9-Nu-Wjn"/>
+                        <outlet property="logCommuteButton" destination="SZp-5Y-Hto" id="tDT-8e-Fs7"/>
+                        <outlet property="takeTestButton" destination="Lfs-As-aF6" id="4CC-pl-1Zv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -110,8 +112,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6y7-wE-he6" customClass="ORKContinueButton">
-                                <rect key="frame" x="129" y="365" width="62" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6y7-wE-he6" customClass="BorderedButton" customModule="RouteTester" customModuleProvider="target">
+                                <rect key="frame" x="95" y="413" width="130" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
@@ -123,7 +125,7 @@
                         <viewLayoutGuide key="safeArea" id="jL1-wQ-Icq"/>
                     </view>
                     <connections>
-                        <outlet property="continueButton" destination="6y7-wE-he6" id="qJ2-yn-gep"/>
+                        <outlet property="continueButton" destination="6y7-wE-he6" id="AGq-qa-Rde"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YuG-hr-gwj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -165,17 +167,17 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGZ-XH-G4b" customClass="BorderedButton" customModule="RouteTester" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="390" width="130" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Continue"/>
+                                        <connections>
+                                            <action selector="Continue:" destination="SDE-Q5-Y5p" eventType="touchUpInside" id="hSg-VX-Wru"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGZ-XH-G4b">
-                                <rect key="frame" x="129" y="467" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Continue"/>
-                                <connections>
-                                    <action selector="Continue:" destination="SDE-Q5-Y5p" eventType="touchUpInside" id="hSg-VX-Wru"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="ON4-iE-gi6"/>
@@ -185,6 +187,7 @@
                         <outlet property="ImageView" destination="DTP-D3-eqe" id="OJr-3g-gkr"/>
                         <outlet property="TestView" destination="Yvp-iJ-6mA" id="xqE-Sf-jgP"/>
                         <outlet property="activityIndicator" destination="Jy9-zb-Wjn" id="ft3-GI-SKB"/>
+                        <outlet property="continueButton" destination="dGZ-XH-G4b" id="5xw-Ga-hHC"/>
                         <outlet property="testLoaded" destination="4gL-yG-kuS" id="dHL-8a-BiY"/>
                         <outlet property="testLoadingLabel" destination="sEz-zW-NwW" id="uPg-eF-x7L"/>
                         <outlet property="whiteView" destination="Ieh-dr-3ce" id="VmD-Mt-qyZ"/>
@@ -216,8 +219,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqG-p3-zYx" customClass="ORKBorderedButton">
-                                <rect key="frame" x="124" y="365" width="73" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqG-p3-zYx" customClass="BorderedButton" customModule="RouteTester" customModuleProvider="target">
+                                <rect key="frame" x="95" y="374" width="130" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Join Study"/>
                                 <connections>
@@ -229,6 +232,7 @@
                         <viewLayoutGuide key="safeArea" id="eyT-Yg-vWf"/>
                     </view>
                     <connections>
+                        <outlet property="joinButton" destination="HqG-p3-zYx" id="6Z8-hk-Qvz"/>
                         <outlet property="joinStudy" destination="HqG-p3-zYx" id="HAa-Mh-vVY"/>
                     </connections>
                 </viewController>
@@ -267,8 +271,9 @@
                                     <constraint firstItem="TuB-ru-ta6" firstAttribute="leading" secondItem="CCa-Nf-1mf" secondAttribute="leading" id="oYo-3K-uDP"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BS2-Vr-jBP" customClass="ORKBorderedButton">
-                                <rect key="frame" x="144" y="446" width="32" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BS2-Vr-jBP" customClass="BorderedButton" customModule="RouteTester" customModuleProvider="target">
+                                <rect key="frame" x="95" y="440" width="130" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Stop"/>
                                 <connections>
                                     <action selector="stopTapped:" destination="im6-Xg-9To" eventType="touchUpInside" id="O3R-IR-u4Q"/>
@@ -286,8 +291,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3H3-s1-AuB" customClass="ORKBorderedButton">
-                                <rect key="frame" x="143" y="446" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3H3-s1-AuB" customClass="BorderedButton" customModule="RouteTester" customModuleProvider="target">
+                                <rect key="frame" x="95" y="440" width="130" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="start:" destination="im6-Xg-9To" eventType="touchUpInside" id="hrt-Qt-dfn"/>
@@ -296,15 +302,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BS2-Vr-jBP" firstAttribute="centerX" secondItem="xbs-xp-Nkw" secondAttribute="centerX" id="4gG-g1-tvi"/>
                             <constraint firstItem="jrE-rC-QrL" firstAttribute="centerX" secondItem="CCa-Nf-1mf" secondAttribute="centerX" id="6xf-Wd-Svu"/>
-                            <constraint firstItem="3H3-s1-AuB" firstAttribute="centerX" secondItem="BS2-Vr-jBP" secondAttribute="centerX" id="H1x-ry-Xql"/>
                             <constraint firstAttribute="bottom" secondItem="CCa-Nf-1mf" secondAttribute="bottom" constant="162" id="Ix5-NX-IU8"/>
                             <constraint firstItem="xbs-xp-Nkw" firstAttribute="leading" secondItem="UJr-Xh-xrl" secondAttribute="leading" id="OzP-hZ-3di"/>
-                            <constraint firstItem="BS2-Vr-jBP" firstAttribute="top" secondItem="CCa-Nf-1mf" secondAttribute="bottom" constant="40" id="QOI-GK-OMS"/>
                             <constraint firstItem="CCa-Nf-1mf" firstAttribute="leading" secondItem="XPu-wZ-9vb" secondAttribute="leading" constant="10" id="ZcG-07-feW"/>
                             <constraint firstItem="CCa-Nf-1mf" firstAttribute="top" secondItem="UJr-Xh-xrl" secondAttribute="top" constant="357" id="au6-Ft-kGU"/>
-                            <constraint firstItem="3H3-s1-AuB" firstAttribute="baseline" secondItem="BS2-Vr-jBP" secondAttribute="baseline" id="cER-xC-vDh"/>
                             <constraint firstItem="XPu-wZ-9vb" firstAttribute="trailing" secondItem="CCa-Nf-1mf" secondAttribute="trailing" id="lYp-my-Q1r"/>
                             <constraint firstItem="xbs-xp-Nkw" firstAttribute="top" secondItem="jrE-rC-QrL" secondAttribute="bottom" constant="19" id="x6v-mz-Ex7"/>
                             <constraint firstItem="CCa-Nf-1mf" firstAttribute="top" secondItem="xbs-xp-Nkw" secondAttribute="bottom" constant="31" id="xOU-s1-kIH"/>
@@ -316,8 +318,8 @@
                         <outlet property="dataStackView" destination="CCa-Nf-1mf" id="InZ-d9-QO8"/>
                         <outlet property="distanceLabel" destination="TuB-ru-ta6" id="tHT-C1-JBT"/>
                         <outlet property="mapView" destination="xbs-xp-Nkw" id="wgM-Fd-vxC"/>
-                        <outlet property="startButton" destination="3H3-s1-AuB" id="ozK-P2-r69"/>
-                        <outlet property="stopButton" destination="BS2-Vr-jBP" id="MRL-Y9-C0T"/>
+                        <outlet property="startButton" destination="3H3-s1-AuB" id="MeE-sw-3Ya"/>
+                        <outlet property="stopButton" destination="BS2-Vr-jBP" id="Gr2-er-nV0"/>
                         <outlet property="timeLabel" destination="m0I-QB-Ngb" id="8fm-XY-Mry"/>
                         <segue destination="gEk-3M-Vds" kind="show" identifier="CommuteDetailsViewController" id="bPc-rY-Dyu"/>
                     </connections>
@@ -374,10 +376,10 @@
                                     <constraint firstAttribute="height" constant="194" id="FxS-9T-Sg4"/>
                                 </constraints>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQT-qs-Haz" customClass="ORKContinueButton">
-                                <rect key="frame" x="127" y="442" width="66" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQT-qs-Haz" customClass="BorderedButton" customModule="RouteTester" customModuleProvider="target">
+                                <rect key="frame" x="95" y="449" width="130" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="1Wj-f6-gBb"/>
+                                    <constraint firstAttribute="height" constant="36" id="vU1-ea-X2f"/>
                                 </constraints>
                                 <state key="normal" title="Continue "/>
                                 <connections>
@@ -390,14 +392,15 @@
                             <constraint firstItem="2pQ-UC-3Fs" firstAttribute="top" secondItem="acA-HU-g8i" secondAttribute="bottom" constant="15" id="67t-RQ-XXF"/>
                             <constraint firstItem="tKH-3b-ELk" firstAttribute="leading" secondItem="ovw-K0-KU5" secondAttribute="leading" constant="10" id="AtB-bT-Gb0"/>
                             <constraint firstItem="2pQ-UC-3Fs" firstAttribute="centerX" secondItem="acA-HU-g8i" secondAttribute="centerX" id="ELo-nY-CN2"/>
-                            <constraint firstItem="ovw-K0-KU5" firstAttribute="bottom" secondItem="oQT-qs-Haz" secondAttribute="bottom" constant="96" id="Ghg-Lh-2Ge"/>
                             <constraint firstItem="tKH-3b-ELk" firstAttribute="top" secondItem="2pQ-UC-3Fs" secondAttribute="bottom" constant="23" id="OjX-2y-Db0"/>
                             <constraint firstItem="2pQ-UC-3Fs" firstAttribute="leading" secondItem="0Y9-Ec-d0F" secondAttribute="leading" id="OoW-T1-Vnt"/>
                             <constraint firstItem="2pQ-UC-3Fs" firstAttribute="top" secondItem="0Y9-Ec-d0F" secondAttribute="top" constant="132" id="TZK-88-yT6"/>
                             <constraint firstItem="ovw-K0-KU5" firstAttribute="trailing" secondItem="tKH-3b-ELk" secondAttribute="trailing" id="Vxz-LY-L4i"/>
+                            <constraint firstItem="oQT-qs-Haz" firstAttribute="top" secondItem="tKH-3b-ELk" secondAttribute="bottom" constant="26" id="XdD-dT-Wg9"/>
                             <constraint firstItem="2pQ-UC-3Fs" firstAttribute="centerX" secondItem="oQT-qs-Haz" secondAttribute="centerX" id="ZPj-SE-DkR"/>
                             <constraint firstItem="2pQ-UC-3Fs" firstAttribute="trailing" secondItem="tKH-3b-ELk" secondAttribute="trailing" id="ZXg-Sd-HaN"/>
-                            <constraint firstItem="oQT-qs-Haz" firstAttribute="top" secondItem="tKH-3b-ELk" secondAttribute="bottom" constant="19" id="rrY-a5-Wpe"/>
+                            <constraint firstItem="oQT-qs-Haz" firstAttribute="leading" secondItem="ovw-K0-KU5" secondAttribute="leading" constant="95" id="dZ4-gG-XSU"/>
+                            <constraint firstItem="ovw-K0-KU5" firstAttribute="bottom" secondItem="oQT-qs-Haz" secondAttribute="bottom" constant="83" id="gn8-i5-vhf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ovw-K0-KU5"/>
                     </view>

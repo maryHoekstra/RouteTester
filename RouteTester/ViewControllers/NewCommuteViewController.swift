@@ -20,8 +20,9 @@ class NewCommuteViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
 
-    @IBOutlet weak var startButton: ORKBorderedButton!
-    @IBOutlet weak var stopButton: ORKBorderedButton!
+    @IBOutlet weak var startButton: BorderedButton!
+    @IBOutlet weak var stopButton: BorderedButton!
+    
 
     private var commute: Commute?
     private let minLocations = 2
